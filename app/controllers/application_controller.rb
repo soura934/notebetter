@@ -7,11 +7,11 @@ class ApplicationController < ActionController::Base
     end
 
     def login(user)
-        session_token[:session_token] = user.reset_session_token!
+        session[:session_token] = user.reset_session_token!
     end
 
     def logged_in?
-        current_user!!
+        !!current_user
     end
 
     def logout
@@ -20,6 +20,6 @@ class ApplicationController < ActionController::Base
     end
 
     def ensure_logged_in?
-        redirect_to new_session_url unless logged_in?
+        render json: {base: ['invalid inputs']} unless logged_in?
     end
 end
