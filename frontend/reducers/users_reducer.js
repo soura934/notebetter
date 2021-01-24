@@ -4,7 +4,7 @@ import {
 
 const usersReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
-    switch (oldState.type) {
+    switch (action.type) {
         case RECEIVE_CURRENT_USER:
             return Object.assign({}, oldState, {[action.currentUser.id]: action.currentUser});
         default:
