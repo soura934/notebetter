@@ -18,3 +18,4 @@ export const logout = () => {
         url: '/api/session',
     })
 }
+// window.signup = signup;
