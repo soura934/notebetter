@@ -6,7 +6,7 @@ const Greeting = (props) => {
         // debugger
         return (
             <div>
-                {props.currentUser} Welcome to your notes
+                {props.currentUser.email} Welcome to your notes
                 <br />
                 <button onClick={props.logout}>Logout</button>
             </div>

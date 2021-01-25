@@ -5,7 +5,7 @@ import Greeting from './greeting';
 
 const mst = (state, ownProp) => {
     return {
-        currentUser: state.entitiesReducer.users[state.sessionReducer.id]
+        currentUser: state.entities.users[state.session.id]
     } 
 }
 

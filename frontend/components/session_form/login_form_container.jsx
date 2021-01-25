@@ -2,17 +2,21 @@ import { connect } from 'react-redux';
 import React from 'react';
 import { login } from '../../actions/session_actions';
 import SessionForm from './session_form';
+import { Link } from 'react-router-dom';
 
-const mst = ({ errorsReducer }) => {
+
+const mst = (state) => {
     return {
-        errors: errorsReducer.session,
-        formType: 'login'
+        errors: state.errors.session,
+        formType: 'login',
+
     } ;
 }
 
 const mdp = (dispatch) => {
     return {
-        action: (user) => {dispatch(login(user))}
+        action: (user) => {dispatch(login(user))},
+        login: (user) => {dispatch(login(user))}
     }
 }
 
