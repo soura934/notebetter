@@ -38,7 +38,7 @@ const Greeting = (props) => {
                 </ul>
                 </li>
                 <li>
-                    <h2>Framework</h2>
+                    <h2 className="footer-header">Framework</h2>
                 <ul>
                     <li>Rails</li>
                     <li>React</li>
