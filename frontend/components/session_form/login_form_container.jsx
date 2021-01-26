@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const mst = (state) => {
     return {
         errors: state.errors.session,
-        formType: 'login',
+        formType: 'Login!',
 
     } ;
 }

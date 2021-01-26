@@ -40,20 +40,10 @@ button {
   */
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
 }
 
 button,
 input[type="submit"] {
   cursor: pointer;
 }
-
-/* Clearfix */
-
-.group:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-// this reset file is from app academy
+// from app academy
