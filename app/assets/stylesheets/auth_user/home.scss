@@ -4,6 +4,7 @@
     align-items: center;
     min-height: 10vh;
     background-color: green;
+    color: white;
 }
 
 .logo {
@@ -25,10 +26,15 @@
 .footer {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: space-between;
     min-height: 10vh;
     background-color: green;
     list-style: none;
+    color: white;
 
+}
+.footer-header {
+    font-weight: bold;
+    width: 20%;
 }
 

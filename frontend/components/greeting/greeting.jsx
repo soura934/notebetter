@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Greeting = (props) => {
     const loggedin = () => {
-        // debugger
+    
         return (
             <div>
                 {props.currentUser.email} Welcome to your notes
