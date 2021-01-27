@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { login } from '../../actions/session_actions';
+import { login, unmountErrors } from '../../actions/session_actions';
 import SessionForm from './session_form';
 import { Link } from 'react-router-dom';
 
@@ -16,7 +16,8 @@ const mst = (state) => {
 const mdp = (dispatch) => {
     return {
         action: (user) => {dispatch(login(user))},
-        login: (user) => {dispatch(login(user))}
+        login: (user) => {dispatch(login(user))},
+        unmountErrors: () => {dispatch(unmountErrors())}
     }
 }
 

@@ -8,9 +8,10 @@
     background-color: white;
     border: 2px solid;
     bottom: 0;
+    
 }
 .screen {
-    background: rgb(211, 250, 203);
+    background: white;
     top: 0;
     bottom: 0;
     position: fixed;
@@ -23,6 +24,7 @@
     border: 1px solid lightgray;
     padding: 10px;
     width: 200;
+    border-radius: 10px 10px 10px 10px;
   }
 
   .submit-form {
@@ -34,16 +36,25 @@
       font-size: 15px;
       margin: 6px 3px;
       width: 75%;
+      border-radius: 10px 10px 10px 10px;
+
+      
+  }
+
+  .submit-form:hover {
+        background-color: forestgreen;
   }
   .demo {
-    background: lightgray;
-    border: none;
+    border: 1px solid lightgrey;
     color: black;
     padding: 15px 32px;
     text-align: center;
     font-size: 15px;
     margin: 6px 3px;
     width: 75%;
+    border-radius: 10px 10px 10px 10px;
+    
+
   }
   .or {
       display: flex;
@@ -57,5 +68,9 @@
         font-size: 200%;
         font-weight: 300;
   }
+  button.demo:hover  {
+      background-color: lightgray;
+  }
+  
   
   
