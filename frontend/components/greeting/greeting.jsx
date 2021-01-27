@@ -15,7 +15,13 @@ const Greeting = (props) => {
         return (
         <div>
             <nav className="nav">
-                <div className="logo"><h1>Notebetter</h1></div>
+            <div className="logo">
+            <div className="logo-img">
+            <img src="https://www.datocms-assets.com/15991/1580862562-test.gif?auto=format"/>
+            </div>
+            <h1>Notebetter</h1>
+
+                </div>
                 <div className="logsbutton">
                 <Link to="/login">Login</Link>
                 <>or</>
