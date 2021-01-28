@@ -6,16 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.delete_all
-Note.delete_all
 
-user = User.create!(
-    email: 'email1@email1.com',
-    password: 'password'
-)
-# note = Note.create!(
-#     title: 'Project',
-#     body: 'Build a fullstack project',
-#     user_id: user.id,
-#     notebook_id:
+
+
+# user = User.create!(
+#     email: 'email@email.com',
+#     password: 'password'
 # )
+note = Note.create!(
+    title: 'Project',
+    body: 'Build a fullstack project',
+    user_id: 19,
+    notebook_id: 1,
+)
