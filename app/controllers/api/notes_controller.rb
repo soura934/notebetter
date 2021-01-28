@@ -1,7 +1,7 @@
-class Api::Notes < ApplicationController
+class Api::NotesController < ApplicationController
 
   def index 
-    @notes = Note.all.includes(:user_id)
+    @notes = Note.all
     render :index
   end
 
@@ -12,8 +12,7 @@ class Api::Notes < ApplicationController
 
   def create
     @note = Note.new(valid_params)
-    @note.user_id = Note.first
-    if @note.save
+    if @note.save!
       render :show
     else
       render json: @note.errors.full_messages, status: 422
@@ -36,6 +35,6 @@ class Api::Notes < ApplicationController
   end
 
   def valid_params
-    params.require(:note).permit(:title, :body)
+    params.require(:note).permit(:title, :body, :user_id, :notebook_id)
   end
 end
