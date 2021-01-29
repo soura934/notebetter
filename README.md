@@ -30,7 +30,7 @@ Notebetter is a single page website for taking note reference back to it later. 
 
 ### Splash Page
 
-* <img width='' height='' src='notebetter/app/assets/images/authPage.png' >
+<img width='' height='' src='notebetter/app/assets/images/authPage.png' >
 
 ## Future Update
 
