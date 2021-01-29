@@ -19,7 +19,7 @@ Notebetter is a single page website for taking note reference back to it later. 
 
 ## Feature 
 
-# User Authentication
+### User Authentication
 
 * A user can sign up and create an account 
 
@@ -28,7 +28,7 @@ Notebetter is a single page website for taking note reference back to it later. 
 * A user can only have access to the notes that belongs to them
 
 
-## Splash Page
+### Splash Page
 
 * 
 
