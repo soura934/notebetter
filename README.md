@@ -1,24 +1,40 @@
-# README
+# Notebetter
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Notebetter is a single page website for taking note reference back to it later. It makes life easier and organize them by notebook. Notebetter is a clone of Evernote.
 
-Things you may want to cover:
+## Technology Used
 
-* Ruby version
+### Backend
 
-* System dependencies
+* Ruby on Rails
 
-* Configuration
+* PostgreSQL
 
-* Database creation
+### Frontend
 
-* Database initialization
+* Redux
 
-* How to run the test suite
+* React 
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Feature 
 
-* ...
+# User Authentication
+
+* A user can sign up and create an account 
+
+* Only a user with credentials can have access to the app
+
+* A user can only have access to the notes that belongs to them
+
+
+## Splash Page
+
+* 
+
+## Future Update
+
+* It will include a rich editing text to create and modified a note
+ 
+* Organize notes by notebooks and tags
+
