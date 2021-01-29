@@ -30,6 +30,8 @@ Notebetter is a single page website for taking note reference back to it later. 
 
 ### Splash Page
 
+Keep it sweet and simple styling just like evernote.com
+
 <img width='' height='' src='https://github.com/soura934/notebetter/blob/main/app/assets/images/authPage.png' >
 
 ## Future Update
