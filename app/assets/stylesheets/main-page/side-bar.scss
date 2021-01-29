@@ -1,0 +1,36 @@
+.wraper {
+    display: flex;
+    position: relative;
+
+}
+.sidebar {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: rgb(32, 32, 32);
+    padding: 25px ;
+}
+
+#logout {
+    color: green;
+    text-align: center;
+    margin-bottom: 100px;
+ 
+}
+#note {
+    padding: 15px;
+    border-bottom: 1px solid gray;
+    border-top: 1px solid gray;
+    color:rgb(107, 106, 106);
+    background: rgb(238, 236, 236) ;
+    font-weight: bold;
+}
+
+.nav-header {
+    width: 100%;
+    margin-left: 350px;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 25px
+}
+

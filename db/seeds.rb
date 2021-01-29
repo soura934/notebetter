@@ -7,15 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+User.delete_all
+Note.delete_all
 
-
-# user = User.create!(
-#     email: 'email@email.com',
-#     password: 'password'
-# )
+user = User.create!(
+    email: 'email@email.com',
+    password: 'password'
+)
 note = Note.create!(
     title: 'Project',
     body: 'Build a fullstack project',
-    user_id: 19,
+    user_id: user.id,
     notebook_id: 1,
 )

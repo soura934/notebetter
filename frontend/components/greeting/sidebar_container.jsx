@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { logout } from '../../actions/session_actions';
-import Greeting from './greeting';
+import Sidebar from './sidebar';
 
 const mst = (state, ownProp) => {
     return {
@@ -15,4 +15,4 @@ const mdp = (dispatch) => {
     }
 }
 
-export default connect(mst, mdp)(Greeting);
+export default connect(mst, mdp)(Sidebar);

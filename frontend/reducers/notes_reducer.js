@@ -5,12 +5,14 @@ import {
 } from '../actions/note_actions';
 
 const notesReducer = (oldState = {}, action) => {
+    // debugger
     Object.freeze(oldState);
-    switch (oldState.type) {
+    switch (action.type) {
         case RECEIVE_NOTE:
             return Object.assign({}, oldState, {[action.id]: action.note});
         case RECEIVE_NOTES:
-            return Object.assign({}, oldState, action.notes);
+            // debugger
+            return action.notes.notes;
         case DESTROY_NOTE:
             let newState = Object.assign({}, oldState)
             delete newState[action.noteId];
