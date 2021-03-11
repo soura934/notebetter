@@ -12,7 +12,6 @@ const Sidebar = (props) => {
             {props.currentUser.email} 
                 {props.noteLi}
             </div>
-                    <h1 className="nav-header">Welcome!</h1>
             </div>
         )
     }

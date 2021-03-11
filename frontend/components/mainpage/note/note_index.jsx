@@ -25,7 +25,7 @@ class NoteIndex extends React.Component {
         });
         return ( 
             <div>
-                {/* {noteLi} */}
+                {noteLi}
             </div>
          );
     }
