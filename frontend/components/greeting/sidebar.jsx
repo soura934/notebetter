@@ -10,8 +10,8 @@ const Sidebar = (props) => {
             <button  onClick={props.logout}>Logout</button>
             </div>
             <p id='note'>note</p>
-            {/* {props.currentUser.email}  */}
-                {/* {props.noteLi} */}
+            {props.currentUser.email} 
+                {props.noteLi}
             </div>
                     <h1 className="nav-header">Welcome!</h1>
             </div>
