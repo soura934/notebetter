@@ -9,7 +9,6 @@ const Sidebar = (props) => {
             <div id="logout">
             <button  onClick={props.logout}>Logout</button>
             </div>
-            <p id='note'>note</p>
             {props.currentUser.email} 
                 {props.noteLi}
             </div>
