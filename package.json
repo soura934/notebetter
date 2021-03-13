@@ -1,5 +1,5 @@
 {
-  "name": "BetterNote",
+  "name": "notebetter",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.12.10",

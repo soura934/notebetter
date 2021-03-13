@@ -6,11 +6,10 @@ const Sidebar = (props) => {
         <div className="wrapper">
             
             <div className="sidebar">
+            {props.currentUser.email} 
             <div id="logout">
             <button  onClick={props.logout}>Logout</button>
             </div>
-            {props.currentUser.email} 
-                {props.noteLi}
             </div>
             </div>
         )
