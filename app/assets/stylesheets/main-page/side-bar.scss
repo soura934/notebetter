@@ -1,14 +1,9 @@
-.wraper {
-    display: flex;
-    position: relative;
-
-}
 .sidebar {
-    position: fixed;
+    display: flex;
     width: 250px;
     height: 100%;
+    flex-direction: column;
     background: green;
-    padding: 25px ;
 }
 
 #logout {
