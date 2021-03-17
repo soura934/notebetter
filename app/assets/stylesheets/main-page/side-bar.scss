@@ -1,16 +1,26 @@
-.sidebar {
+.app {
     display: flex;
+    height: 100vh;
+}
+.sidebar {
+    display: block;
     width: 250px;
     height: 100%;
-    flex-direction: column;
     background: green;
+    position: relative;
 }
 
 #logout {
     color: black;
     text-align: center;
     margin-bottom: 100px;
+    background: green;
  
+}
+.noteindex{
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
 }
 // #note {
 //     padding: 15px;

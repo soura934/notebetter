@@ -12,7 +12,7 @@ import NoteIndexContainer from "./mainpage/note/note_index_container";
 
 
 const App = () => (
-  <div className="navbar">
+  <div className="app">
     
     <ProtectedRoute path='/app' component={SidebarContainer} />
     <ProtectedRoute path='/app/notes' component={NoteIndexContainer} />
