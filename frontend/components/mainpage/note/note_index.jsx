@@ -1,5 +1,4 @@
 import React from 'react';
-import Sidebar from '../../greeting/sidebar';
 
 class NoteIndex extends React.Component {
     constructor(props) {
