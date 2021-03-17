@@ -12,7 +12,6 @@ class NoteIndex extends React.Component {
 
 
     render() { 
-        // debugger
         if (this.props.notes === {}){
             return <p>No notes yet!</p>;
         } 

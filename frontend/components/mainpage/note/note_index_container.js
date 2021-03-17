@@ -4,7 +4,6 @@ import { fetchNotes } from '../../../actions/note_actions';
 import NoteIndex from './note_index';
 
 const mstp = (state, ownProp) => {
-    // debugger
     return {
         notes: Object.values(state.entities.notes)
     }
