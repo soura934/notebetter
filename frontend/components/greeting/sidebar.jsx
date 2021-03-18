@@ -10,6 +10,7 @@ const Sidebar = (props) => {
             <div id="logout">
                 <button  onClick={props.logout}>Logout</button>
             </div>
+
         </div>
         )
     }
