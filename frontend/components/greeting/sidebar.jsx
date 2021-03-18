@@ -9,14 +9,25 @@ const Sidebar = (props) => {
                     <i className="fa fa-user" aria-hidden="true"></i>
                     <div className="profile-name">
                         {props.currentUser.email}
-                        <i className="fas fa-caret-down"></i>                    </div>
+                        <i className="fas fa-angle-down"></i>                    </div>
                 </div> 
-                <div id="logout">
+                {/* <div id="logout">
                     <button  onClick={props.logout}>Logout</button>
-                </div>
+                </div> */}
             </div>
             <div className="add">
             <button><i className="fas fa-plus"></i>Add New a Note</button>
+            </div>
+            
+            <div className="contents">
+                <div className="notes">
+                <i class="fas fa-sticky-note"></i>
+                Notes
+                </div>
+                <div className="notebooks">
+                <i class="fas fa-book"></i>
+                Notebooks
+                </div>
             </div>
         </div>
         )

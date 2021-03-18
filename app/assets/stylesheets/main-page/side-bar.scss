@@ -21,20 +21,25 @@
     padding-left: 10px;
 }
 
-.fa-caret-down {
+.fa-angle-down {
     margin-left: 10px;
 }
 
 .add {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: 80%;
     background-color: green;
     margin-left: 15px;
     border-radius: 20px;
     margin: 20px;
     height: 6%;
+}
+.fa-plus {
+    margin-right: 10px;
+    margin-left: 10px;
+
 }
 // #logout {
 //     color: black;
