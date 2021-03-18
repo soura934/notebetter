@@ -16,7 +16,7 @@ const Sidebar = (props) => {
                 </div>
             </div>
             <div className="add">
-            <i class="fas fa-plus"></i>Add New a Note
+            <button><i class="fas fa-plus"></i>Add New a Note</button>
             </div>
         </div>
         )
