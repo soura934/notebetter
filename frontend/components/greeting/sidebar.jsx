@@ -6,7 +6,7 @@ const Sidebar = (props) => {
         <div className="sidebar">
             <div className="sidebar-dropdown">
                 <div className="sidebar-profile">
-                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <i className="fa fa-user" aria-hidden="true"></i>
                     <div className="profile-name">
                         {props.currentUser.email}
                         <i className="fas fa-caret-down"></i>                    </div>
@@ -16,7 +16,7 @@ const Sidebar = (props) => {
                 </div>
             </div>
             <div className="add">
-            <button><i class="fas fa-plus"></i>Add New a Note</button>
+            <button><i className="fas fa-plus"></i>Add New a Note</button>
             </div>
         </div>
         )
