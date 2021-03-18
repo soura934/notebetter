@@ -15,7 +15,7 @@
 .sidebar-profile {
     display: flex;
     align-items: center;
-    padding: 25px;
+    padding: 20px;
 }
 .profile-name {
     padding-left: 10px;
@@ -31,7 +31,7 @@
     justify-content: flex-start;
     width: 80%;
     background-color: green;
-    margin-left: 15px;
+    margin-left: 20px;
     border-radius: 20px;
     margin: 20px;
     height: 6%;
@@ -53,14 +53,23 @@
     flex-direction: column;
     overflow: auto;
 }
-// #note {
-//     padding: 15px;
-//     border-bottom: 1px solid gray;
-//     border-top: 1px solid gray;
-//     color:rgb(107, 106, 106);
-//     background: rgb(238, 236, 236) ;
-//     font-weight: bold;
-// }
+.contents {
+
+    ul {
+        li {
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            &:hover {
+                background: gray;
+                cursor: pointer;
+            }
+        }
+    } 
+    .fas {
+    padding: 10px;
+    }
+}
 
 // .nav-header {
 //     width: 100%;

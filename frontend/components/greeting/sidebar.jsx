@@ -17,17 +17,20 @@ const Sidebar = (props) => {
             </div>
             <div className="add">
             <button><i className="fas fa-plus"></i>Add New a Note</button>
-            </div>
-            
+            </div>      
             <div className="contents">
-                <div className="notes">
-                <i class="fas fa-sticky-note"></i>
-                Notes
-                </div>
-                <div className="notebooks">
-                <i class="fas fa-book"></i>
-                Notebooks
-                </div>
+                <ul>
+                    <li>
+                        <i className="fas fa-sticky-note"></i>
+                        Notes
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                    <i className="fas fa-book"></i>
+                    Notebooks
+                    </li>
+                </ul>
             </div>
         </div>
         )
