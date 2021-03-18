@@ -15,6 +15,9 @@ const Sidebar = (props) => {
                     <button  onClick={props.logout}>Logout</button>
                 </div>
             </div>
+            <div className="add">
+            <i class="fas fa-plus"></i>Add New a Note
+            </div>
         </div>
         )
     }
