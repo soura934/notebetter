@@ -54,7 +54,7 @@
     overflow: auto;
 }
 .contents {
-
+    height: 60%;
     ul {
         li {
             display: flex;
@@ -69,6 +69,11 @@
     .fas {
     padding: 10px;
     }
+}
+
+.sidebar-footer {
+    padding: 8px 15px;
+    border-top: 1px solid gray;
 }
 
 // .nav-header {

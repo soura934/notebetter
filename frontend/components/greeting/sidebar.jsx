@@ -32,6 +32,11 @@ const Sidebar = (props) => {
                     </li>
                 </ul>
             </div>
+            <div className="sidebar-footer">
+                <div className="icon-footer">
+                    Site Icons
+                </div>
+            </div>
         </div>
         )
     }
