@@ -11,9 +11,9 @@ const Sidebar = (props) => {
                         {props.currentUser.email}
                         <i className="fas fa-angle-down"></i>                    </div>
                 </div> 
-                {/* <div id="logout">
+                <div id="logout">
                     <button  onClick={props.logout}>Logout</button>
-                </div> */}
+                </div>
             </div>
             <div className="add">
             <button><i className="fas fa-plus"></i>Add New a Note</button>
