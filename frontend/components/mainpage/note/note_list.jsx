@@ -5,10 +5,7 @@ class NoteList extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-        this.props.fetchNotes();
-    }
-
+    
 
 
     render() { 
@@ -22,9 +19,7 @@ class NoteList extends React.Component {
             </li>
         });
         return ( 
-            <div className="note-list">
-                {noteLi}
-            </div>
+                noteLi
          );
     }
 }
