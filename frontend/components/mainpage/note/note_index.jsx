@@ -22,14 +22,18 @@ class NoteIndex extends React.Component {
                 </div>
             </div>
             <div className="notes-list-body">
-                <div className="notes-list-body-title">
-                    <h1>Car</h1>
-                </div>
-                <div className="notes-list-body-body">
-                    <p className="notes-">I have to bring him the money</p>
-                </div>
-                <div className="notes-list-body-dates">
-                    <p>March 21</p>
+                <div className="notes-list-box">
+                    <div className="notes-list-box-header">
+                        <div className="notes-list-box-header-title">
+                            <h1>Car</h1>
+                        </div>
+                        <div className="notes-list-box-header-body">
+                            <p>I have to bring him the money</p>
+                        </div>
+                    </div>
+                    <div className="notes-list-body-dates">
+                        <p>March 21</p>
+                    </div>
                 </div>
             </div>
         </div>
