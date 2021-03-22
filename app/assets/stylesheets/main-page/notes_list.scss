@@ -1,8 +1,22 @@
 .list-of-notes {
     height: 100%;
-    background-color: blanchedalmond;
-    width: 350px;
+    background-color: gainsboro;
+    width: 300px;
 }
 .notes-list-header {
-    
+    height: 100px;
+    border-bottom: 1px solid black;
+}
+
+.notes-header-title {
+    h1 {
+        padding: 10px;
+        font-weight: 900;
+        font-size: 20px;
+    }
+}
+.notes-count{
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 15px;
 }
