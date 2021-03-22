@@ -13,12 +13,23 @@ class NoteIndex extends React.Component {
     render() { 
         return ( 
         <div className="list-of-notes">
-            <div className="notes-header">
+            <div className="notes-list-header">
                 <div className="notes-header-title">
                     <h1>All Notes</h1>
                 </div>
                 <div className="notes-sub-header">
                     <p className="notes-count">8 notes</p>
+                </div>
+            </div>
+            <div className="notes-list-body">
+                <div className="notes-list-body-title">
+                    <h1>Car</h1>
+                </div>
+                <div className="notes-list-body-body">
+                    <p className="notes-">I have to bring him the money</p>
+                </div>
+                <div className="notes-list-body-dates">
+                    <p>March 21</p>
                 </div>
             </div>
         </div>
