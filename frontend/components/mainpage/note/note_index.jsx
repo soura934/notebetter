@@ -11,7 +11,7 @@ class NoteIndex extends React.Component {
     }
 
     render() { 
-        return ( 
+        return ( <>
         <div className="list-of-notes">
             <div className="notes-list-header">
                 <div className="notes-header-title">
@@ -37,7 +37,26 @@ class NoteIndex extends React.Component {
                 </div>
             </div>
         </div>
-            // <NoteList notes={this.props.notes}/>
+        {/* <NoteList notes={this.props.notes}/> */}
+        <div className="note">
+            <div className="note-header">
+                <div className="note-header-title-date">
+                    <div className="note-header-title">
+                        <h1>ToDo Tomorrow</h1>
+                    </div>
+                    <div className="note-header-date">
+                    Last edited on Mar 21, 2021
+                    </div>
+                </div>
+                <div className="note-action-button">
+                    <div className="action-button">
+                        
+                    </div>
+                </div>
+            </div>
+            <div className="note-body"></div>
+        </div>
+    </>
 
          );
     }
