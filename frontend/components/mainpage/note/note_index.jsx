@@ -50,11 +50,18 @@ class NoteIndex extends React.Component {
                 </div>
                 <div className="note-action-button">
                     <div className="action-button">
-                        
+
                     </div>
                 </div>
             </div>
-            <div className="note-body"></div>
+            <div className="note-body">
+                <div className="note-body-title">
+                    <input placeholder="Title"></input>
+                </div>
+                <div className="note-body-body">
+                    <textarea placeholder="Start writing"></textarea>
+                </div>
+            </div>
         </div>
     </>
 
