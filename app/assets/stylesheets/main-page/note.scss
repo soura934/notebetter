@@ -1,4 +1,40 @@
-.note{
+.note {
     display: flex;
     align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 730px;
+    background-color: palegreen;
 }
+.note-header {
+    height: 80px;
+    border-bottom: 1px solid black ;
+    width: 100%;
+}
+.note-header-title-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+.note-header-title {
+    font-size: 20px;
+    font-weight: 900;
+}
+.note-action-button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 20px;
+    height: 30px;
+    justify-content: center;
+}
+.note-action-button:hover { 
+    background-color: lightgray;
+}
+// .action-button {
+//     cursor: pointer;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }

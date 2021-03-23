@@ -40,18 +40,16 @@ class NoteIndex extends React.Component {
         {/* <NoteList notes={this.props.notes}/> */}
         <div className="note">
             <div className="note-header">
-                <div className="note-header-title-date">
+                <div className="note-header-title-button">
                     <div className="note-header-title">
                         <h1>ToDo Tomorrow</h1>
                     </div>
-                    <div className="note-header-date">
-                    Last edited on Mar 21, 2021
+                    <div className="note-action-button">
+                        <i class="fas fa-ellipsis-h"></i>
                     </div>
                 </div>
-                <div className="note-action-button">
-                    <div className="action-button">
-
-                    </div>
+                <div className="note-header-date">
+                Last edited on Mar 21, 2021
                 </div>
             </div>
             <div className="note-body">
