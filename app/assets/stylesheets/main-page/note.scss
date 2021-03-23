@@ -36,3 +36,8 @@
     font-size: 12px;
     padding: 10px 15px;;
 }
+.note-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
