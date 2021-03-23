@@ -1,5 +1,5 @@
 import React from 'react';
-import NoteList from "./note_list"
+// import NoteList from "./note_list"
 
 class NoteIndex extends React.Component {
     constructor(props) {
