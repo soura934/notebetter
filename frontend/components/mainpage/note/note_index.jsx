@@ -45,7 +45,7 @@ class NoteIndex extends React.Component {
                         <h1>ToDo Tomorrow</h1>
                     </div>
                     <div className="note-action-button">
-                        <i class="fas fa-ellipsis-h"></i>
+                        <i className="fas fa-ellipsis-h"></i>
                     </div>
                 </div>
                 <div className="note-header-date">

@@ -14,12 +14,12 @@ class Sidebar extends React.Component {
                 <div className="sidebar-profile">
                     <i className="fa fa-user" aria-hidden="true"></i>
                     <div className="profile-name">
-                        {/* {props.currentUser.email} */}
+                        {this.props.currentUser.email}
                         <i className="fas fa-angle-down"></i>                
                     </div>
                 </div> 
                 <div id="logout">
-                    {/* <button  onClick={this.props.logout}>Logout</button> */}
+                    <button  onClick={this.props.logout}>Logout</button>
                 </div>
             </div>
             <div className="add">
