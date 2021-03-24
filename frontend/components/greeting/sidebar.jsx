@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Sidebar = (props) => {
         return (
@@ -21,14 +21,18 @@ const Sidebar = (props) => {
             <div className="contents">
                 <ul>
                     <li>
-                        <i className="fas fa-sticky-note"></i>
-                        Notes
+                        <NavLink to="/app/notes">
+                            <i className="fas fa-sticky-note"></i>
+                            Notes
+                        </NavLink>
                     </li>
                 </ul>
                 <ul>
                     <li>
-                    <i className="fas fa-book"></i>
-                    Notebooks
+                        <NavLink to="nothing">
+                            <i className="fas fa-book"></i>
+                            Notebooks
+                        </NavLink>
                     </li>
                 </ul>
             </div>
