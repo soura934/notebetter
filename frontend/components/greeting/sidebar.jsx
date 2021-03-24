@@ -6,6 +6,7 @@ class Sidebar extends React.Component {
         super(props);
         this.state = {  };
     }
+
     render() { 
         return (
         <div className="sidebar">
@@ -13,11 +14,12 @@ class Sidebar extends React.Component {
                 <div className="sidebar-profile">
                     <i className="fa fa-user" aria-hidden="true"></i>
                     <div className="profile-name">
-                        {props.currentUser.email}
-                        <i className="fas fa-angle-down"></i>                    </div>
+                        {/* {props.currentUser.email} */}
+                        <i className="fas fa-angle-down"></i>                
+                    </div>
                 </div> 
                 <div id="logout">
-                    <button  onClick={props.logout}>Logout</button>
+                    {/* <button  onClick={this.props.logout}>Logout</button> */}
                 </div>
             </div>
             <div className="add">
@@ -49,6 +51,7 @@ class Sidebar extends React.Component {
         </div>
         )
     }
+}
  
 
 export default Sidebar;
