@@ -1,7 +1,12 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
-const Sidebar = (props) => {
+class Sidebar extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {  };
+    }
+    render() { 
         return (
         <div className="sidebar">
             <div className="sidebar-dropdown">
