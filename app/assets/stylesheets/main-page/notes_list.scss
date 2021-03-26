@@ -1,7 +1,10 @@
 .list-of-notes {
+    display: flex;
+    flex-direction: column;
     height: 100%;
     background-color: gainsboro;
-    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
 }
 .notes-list-header {
     height: 100px;
