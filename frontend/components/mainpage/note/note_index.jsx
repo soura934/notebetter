@@ -18,7 +18,7 @@ class NoteIndex extends React.Component {
                     <h1>{this.props.title}</h1>
                 </div>
                 <div className="notes-sub-header">
-                    <p className="notes-count">8 notes</p>
+                    <p className="notes-count">{this.props.notes.length} notes</p>
                 </div>
             </div>
             <div className="notes-list-body">
