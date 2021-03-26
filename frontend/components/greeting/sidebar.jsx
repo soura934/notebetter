@@ -27,20 +27,20 @@ class Sidebar extends React.Component {
             </div>      
             <div className="contents">
                 <ul>
-                    <li>
-                        <NavLink to="/app/notes">
+                    <Link to="/app/notes">
+                        <li>
                             <i className="fas fa-sticky-note"></i>
                             Notes
-                        </NavLink>
-                    </li>
+                        </li>
+                    </Link>
                 </ul>
                 <ul>
+                <Link to="nothing">
                     <li>
-                        <NavLink to="nothing">
                             <i className="fas fa-book"></i>
                             Notebooks
-                        </NavLink>
                     </li>
+                </Link>
                 </ul>
             </div>
             <div className="sidebar-footer">
