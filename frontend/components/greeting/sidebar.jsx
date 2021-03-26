@@ -4,7 +4,14 @@ import { Link, NavLink } from 'react-router-dom';
 class Sidebar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {  };
+        this.state = { 
+            title: "",
+            body: ""
+         };
+    }
+    
+    handleCreateNote() {
+
     }
 
     render() { 
