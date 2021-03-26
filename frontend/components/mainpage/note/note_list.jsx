@@ -14,8 +14,6 @@ class NoteList extends React.Component {
         } 
         const noteLi = this.props.notes.map(note => {
             return <li key={note.id}>
-                {/* <h2>{note.title}</h2>
-                <p>{note.body}</p> */}
                 <div className="notes-list-box">
                     <div className="notes-list-box-header">
                         <div className="notes-list-box-header-title">

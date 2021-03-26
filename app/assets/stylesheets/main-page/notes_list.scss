@@ -22,6 +22,9 @@
 .notes-list-body {
     width: 100%;
     overflow: auto;
+    li {
+        list-style: none;
+    }
 }
 .notes-list-box {
     box-sizing: border-box;
