@@ -1,5 +1,5 @@
 import React from 'react';
-// import NoteList from "./note_list"
+import NoteList from "./note_list"
 
 class NoteIndex extends React.Component {
     constructor(props) {
@@ -22,22 +22,22 @@ class NoteIndex extends React.Component {
                 </div>
             </div>
             <div className="notes-list-body">
-                <div className="notes-list-box">
+                {/* <div className="notes-list-box">
                     <div className="notes-list-box-header">
                         <div className="notes-list-box-header-title">
-                            <h1>Car</h1>
+                            <h1><NoteList notes={this.props.notes}/></h1>
                         </div>
                         <div className="notes-list-box-header-body">
-                            <p>I have to bring him the money</p>
+                            <p></p>
                         </div>
                     </div>
                     <div className="notes-list-body-dates">
                         <p>March 21</p>
                     </div>
-                </div>
+                </div> */}
+                <NoteList notes={this.props.notes}/>
             </div>
         </div>
-        {/* <NoteList notes={this.props.notes}/> */}
         <div className="note">
             <div className="note-header">
                 <div className="note-header-title-button">
