@@ -3,15 +3,11 @@ import { Link, NavLink } from 'react-router-dom';
 
 class Sidebar extends React.Component {
     constructor(props) {
-        super(props);
-        this.state = { 
-            title: "",
-            body: ""
-         };
+        super(props);   
     }
-    
-    handleCreateNote() {
 
+    handleCreateNote() {
+        alert("you click me!")
     }
 
     render() { 
@@ -30,7 +26,7 @@ class Sidebar extends React.Component {
                 </div>
             </div>
             <div className="add">
-            <button><i className="fas fa-plus"></i>Add New a Note</button>
+            <button onClick={this.handleCreateNote}><i className="fas fa-plus"></i>Add New a Note</button>
             </div>      
             <div className="contents">
                 <ul>

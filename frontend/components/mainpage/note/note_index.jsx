@@ -3,7 +3,7 @@ import NoteList from "./note_list"
 
 class NoteIndex extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
     }
 
     componentDidMount() {
