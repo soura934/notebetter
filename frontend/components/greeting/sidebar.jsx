@@ -1,13 +1,25 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+
 
 class Sidebar extends React.Component {
     constructor(props) {
-        super(props);   
+        super(props);
+        this.state = {title: 'Untitled', body: '', user_id: this.props.currentUser.id, notebook_id: 1};  
+        this.handleCreateNote = this.handleCreateNote.bind(this);
     }
 
-    handleCreateNote() {
-        alert("you click me!")
+    handleCreateNote(e) {
+        e.preventDefault();
+        if (this.props.createNote(this.state)){
+            this.props.createNote(this.state)
+            .then((obj) => {
+                let noteId = obj.note.id;
+                debugger
+                return (this.props.history.push(`/app/notes/${noteId}`)) 
+            })
+
+        }
     }
 
     render() { 
