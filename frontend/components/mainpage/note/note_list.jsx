@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { format } from 'timeago.js';
 
 class NoteList extends React.Component {
@@ -15,7 +16,7 @@ class NoteList extends React.Component {
         } 
         const noteLi = this.props.notes.map(note => {
             return <li key={note.id}>
-                <div className="notes-list-box">
+                <Link className="notes-list-box" to={`/app/notes/${note.id}`}>
                     <div className="notes-list-box-header">
                         <div className="notes-list-box-header-title">
                             <h1>{note.title}</h1>
@@ -27,7 +28,7 @@ class NoteList extends React.Component {
                     <div className="notes-list-body-dates">
                         <p>{format(note.updated_at)}</p>
                     </div>
-                </div>
+                </Link>
             </li>
         });
         return ( 
