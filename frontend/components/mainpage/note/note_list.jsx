@@ -24,7 +24,7 @@ class NoteList extends React.Component {
                         </div>
                     </div>
                     <div className="notes-list-body-dates">
-                        <p>March 21</p>
+                        <p>{note.updated_at}</p>
                     </div>
                 </div>
             </li>
