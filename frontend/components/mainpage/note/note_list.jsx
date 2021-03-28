@@ -1,4 +1,5 @@
 import React from 'react';
+import { format } from 'timeago.js';
 
 class NoteList extends React.Component {
     constructor(props) {
@@ -24,7 +25,7 @@ class NoteList extends React.Component {
                         </div>
                     </div>
                     <div className="notes-list-body-dates">
-                        <p>{note.updated_at}</p>
+                        <p>{format(note.updated_at)}</p>
                     </div>
                 </div>
             </li>
