@@ -27,19 +27,20 @@
     overflow: auto;
     li {
         list-style: none;
+        border-bottom: 1px solid gray;
+        &:hover{
+            cursor: pointer;
+            background: whitesmoke;
+        }
+        &.active{
+            background: whitesmoke;
+            border: 1px solid blue;
+        }
     }
 }
 .notes-list-box {
     box-sizing: border-box;
     height: 125px;
-    &:hover{
-        cursor: pointer;
-        background: whitesmoke;
-    }
-    &.active{
-        background: whitesmoke;
-        border: 1px solid blue;
-    }
 }
 .notes-list-box-header {
     padding: 15px 25px;
