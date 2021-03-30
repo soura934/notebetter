@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { fetchNotes } from '../../../actions/note_actions';
+import { withRouter } from "react-router-dom";
 import NoteIndex from './note_index';
 
 const mstp = (state, ownProps) => {
@@ -17,4 +18,4 @@ const mdp = (dispatch) => {
     }
 }
 
-export default connect(mstp, mdp)(NoteIndex);
+export default withRouter(connect(mstp, mdp)(NoteIndex));
