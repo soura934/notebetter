@@ -11,7 +11,7 @@ class NoteIndex extends React.Component {
     }
 
     render() { 
-        debugger
+        // debugger
         return ( <>
         <div className="list-of-notes">
             <div className="notes-list-header">

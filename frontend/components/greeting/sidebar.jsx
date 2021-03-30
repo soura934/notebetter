@@ -15,7 +15,7 @@ class Sidebar extends React.Component {
             this.props.createNote(this.state)
             .then((obj) => {
                 let noteId = obj.note.id;
-                debugger
+                // debugger
                 return (this.props.history.push(`/app/notes/${noteId}`)) 
             })
 

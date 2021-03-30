@@ -3,7 +3,8 @@ import React from 'react';
 import { fetchNotes } from '../../../actions/note_actions';
 import NoteIndex from './note_index';
 
-const mstp = (state, ownProp) => {
+const mstp = (state, ownProps) => {
+    console.log(ownProps.match.params)
     return {
         notes: Object.values(state.entities.notes),
         title: 'All Notes'
