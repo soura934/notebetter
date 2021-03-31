@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 import NoteIndex from './note_index';
 
 const mstp = (state, ownProps) => {
-    console.log(ownProps.match.params)
+    console.log(ownProps)
     return {
         notes: Object.values(state.entities.notes),
         title: 'All Notes'
