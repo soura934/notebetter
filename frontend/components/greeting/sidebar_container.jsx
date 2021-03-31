@@ -4,7 +4,8 @@ import { logout } from '../../actions/session_actions';
 import { createNote } from "../../actions/note_actions";
 import Sidebar from './sidebar';
 
-const mst = (state, ownProp) => {
+const mst = (state, ownProps) => {
+    console.log(ownProps)
     return {
         currentUser: state.entities.users[state.session.id]
     } 
