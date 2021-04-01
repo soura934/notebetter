@@ -19,4 +19,4 @@ const mdp = (dispatch) => {
     }
 }
 
-export default withRouter(connect(mstp, mdp)(NoteIndex));
+export default connect(mstp, mdp)(NoteIndex);
