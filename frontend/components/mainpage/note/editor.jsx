@@ -5,14 +5,19 @@ class Editor extends React.Component {
     constructor(props) {
         super(props);
         // this.state = Object.assign({}, this.props.note)
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
-    componentDidMount(){
-        this.props.fetchNote(this.props.note);
+    // componentDidMount(){
+    //     this.props.fetchNote(this.props.note);
+    // }
+
+    handleDelete(){
+        this.props.deleteNote(this.props.noteId)
     }
 
     render() { 
-        debugger
+        // debugger
         if (!this.props.note){
             return null;
         }
@@ -25,7 +30,7 @@ class Editor extends React.Component {
                         <h1>{note.title}</h1>
                     </div>
                     <div className="note-action-button">
-                        <i className="fas fa-ellipsis-h"></i>
+                        <button onClick={this.handleDelete}><i className="fas fa-trash"></i></button>
                     </div>
                 </div>
                 <div className="note-header-date">

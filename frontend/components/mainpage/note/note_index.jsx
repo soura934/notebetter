@@ -27,7 +27,7 @@ class NoteIndex extends React.Component {
                 <NoteList notes={this.props.notes}/>
             </div>
         </div>
-        {/* <Editor /> */}
+        {/* <div>Select a note or create a new one</div> */}
     </>
 
          );
