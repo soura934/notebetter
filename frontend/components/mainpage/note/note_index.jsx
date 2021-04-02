@@ -1,5 +1,6 @@
 import React from 'react';
 import NoteList from "./note_list"
+import Editor from "./editor"
 
 class NoteIndex extends React.Component {
     constructor(props) {
@@ -26,29 +27,7 @@ class NoteIndex extends React.Component {
                 <NoteList notes={this.props.notes}/>
             </div>
         </div>
-        <div className="note">
-            <div className="note-header">
-                <div className="note-header-title-button">
-                    <div className="note-header-title">
-                        <h1>ToDo Tomorrow</h1>
-                    </div>
-                    <div className="note-action-button">
-                        <i className="fas fa-ellipsis-h"></i>
-                    </div>
-                </div>
-                <div className="note-header-date">
-                Last edited on Mar 21, 2021
-                </div>
-            </div>
-            <div className="note-body">
-                <div className="note-body-title">
-                    <input placeholder="Title"></input>
-                </div>
-                <div className="note-body-body">
-                    <textarea placeholder="Start writing"></textarea>
-                </div>
-            </div>
-        </div>
+        {/* <Editor /> */}
     </>
 
          );

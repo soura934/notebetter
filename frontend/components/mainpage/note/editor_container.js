@@ -5,7 +5,8 @@ import Editor from './editor';
 const mstp = (state, ownProps) => {
     debugger
     return {
-        noteId: ownProps
+        note: state.entities.notes[ownProps.match.params.noteId],
+        noteId: ownProps.match.params.noteId
     }
 }
 
