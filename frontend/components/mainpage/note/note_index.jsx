@@ -1,6 +1,7 @@
 import React from 'react';
 import NoteList from "./note_list"
-import Editor from "./editor"
+import EditorContainer from "./editor_container"
+import { Route } from 'react-router-dom';
 
 class NoteIndex extends React.Component {
     constructor(props) {
@@ -27,7 +28,7 @@ class NoteIndex extends React.Component {
                 <NoteList notes={this.props.notes}/>
             </div>
         </div>
-        {/* <div>Select a note or create a new one</div> */}
+        {/* <Route path={["/notes/:noteId"]} component={EditorContainer} /> */}
     </>
 
          );
