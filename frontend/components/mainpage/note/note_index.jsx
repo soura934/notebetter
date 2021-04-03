@@ -28,6 +28,7 @@ class NoteIndex extends React.Component {
                 <NoteList notes={this.props.notes}/>
             </div>
         </div>
+         {/* need to render editor container with this container */}
         {/* <Route path={["/notes/:noteId"]} component={EditorContainer} /> */}
     </>
 

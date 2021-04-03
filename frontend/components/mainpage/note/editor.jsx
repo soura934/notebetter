@@ -1,6 +1,11 @@
 import React from "react";
 import { format } from 'timeago.js';
 
+
+// Must create notes from here instead from nav
+
+
+
 class Editor extends React.Component {
     constructor(props) {
         super(props);
