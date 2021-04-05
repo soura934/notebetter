@@ -16,8 +16,11 @@ class Editor extends React.Component {
     // componentDidMount(){
     //     this.props.fetchNote(this.props.note);
     // }
-    handleUpdate(){
-
+    handleTitle(e){
+        this.setState({title: e.target.value})
+    }
+    handleBody(e){
+        this.setState({body: e.target.value})
     }
 
     handleDelete(){
@@ -47,10 +50,10 @@ class Editor extends React.Component {
             </div>
             <div className="note-body">
                 <div className="note-body-title">
-                    <input placeholder="Title"></input>
+                    <input placeholder="Title" onChange={this.handleTitle}></input>
                 </div>
                 <div className="note-body-body">
-                    <textarea placeholder="Start writing"></textarea>
+                    <textarea placeholder="Start writing" onChange={this.handleBody}></textarea>
                 </div>
             </div>
         </div> );
