@@ -11,6 +11,7 @@ class Editor extends React.Component {
         super(props);
         this.state = Object.assign({}, this.props.note)
         this.handleDelete = this.handleDelete.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
         this.handleTitle = this.handleTitle.bind(this);
         this.handleBody = this.handleBody.bind(this);
     }
@@ -28,15 +29,17 @@ class Editor extends React.Component {
     handleDelete(){
         this.props.deleteNote(this.props.noteId)
     }
+    handleUpdate(){
+        this.props.updateNote(this.state.id);
+    }
 
     render() { 
         // debugger
-        if (!this.props.note){
-            return null;
-        }
-        const note = this.props.note
-        return ( 
-        <div className="note">
+        
+        // const note = this.props.note
+        return ( <>
+        {this.props.note ? <div className="note"> 
+        
             <div className="note-header">
                 <div className="note-header-title-button">
                     <div className="note-header-title">
@@ -52,13 +55,18 @@ class Editor extends React.Component {
             </div>
             <div className="note-body">
                 <div className="note-body-title">
-                    <input placeholder="Title" onChange={this.handleTitle}></input>
+                    <input placeholder="Title" 
+                    value={this.state.title}
+                    onChange={this.handleTitle}
+                    onBlur={this.handleUpdate}>
+                    </input>
                 </div>
                 <div className="note-body-body">
                     <textarea placeholder="Start writing" onChange={this.handleBody}></textarea>
                 </div>
             </div>
-        </div> );
+        </div> : null}
+        </>);
     }
 }
  
