@@ -9,13 +9,16 @@ import { format } from 'timeago.js';
 class Editor extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = Object.assign({}, this.props.note)
+        this.state = Object.assign({}, this.props.note)
         this.handleDelete = this.handleDelete.bind(this);
     }
 
     // componentDidMount(){
     //     this.props.fetchNote(this.props.note);
     // }
+    handleUpdate(){
+
+    }
 
     handleDelete(){
         this.props.deleteNote(this.props.noteId)
