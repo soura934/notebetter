@@ -11,6 +11,8 @@ class Editor extends React.Component {
         super(props);
         this.state = Object.assign({}, this.props.note)
         this.handleDelete = this.handleDelete.bind(this);
+        this.handleTitle = this.handleTitle.bind(this);
+        this.handleBody = this.handleBody.bind(this);
     }
 
     // componentDidMount(){
