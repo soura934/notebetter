@@ -9,6 +9,7 @@ import { format } from 'timeago.js';
 class Editor extends React.Component {
     constructor(props) {
         super(props);
+        // debugger
         this.state = Object.assign({}, this.props.note)
         this.handleDelete = this.handleDelete.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
@@ -61,7 +62,11 @@ class Editor extends React.Component {
                     </input>
                 </div>
                 <div className="note-body-body">
-                    <textarea placeholder="Start writing" onChange={this.handleBody}></textarea>
+                    <textarea placeholder="Start writing"
+                    value={this.state.body}
+                    onBlur={this.handleUpdate}
+                    onChange={this.handleBody}>
+                    </textarea>
                 </div>
             </div>
         </div> : null}
