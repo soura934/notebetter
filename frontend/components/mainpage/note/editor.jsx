@@ -30,13 +30,12 @@ class Editor extends React.Component {
         this.props.deleteNote(this.props.noteId)
     }
     handleUpdate(){
-        this.props.updateNote(this.state.id);
+        this.props.updateNote(this.state);
     }
 
     render() { 
-        // debugger
         
-        // const note = this.props.note
+        const note = this.props.note
         return ( <>
         {this.props.note ? <div className="note"> 
         
