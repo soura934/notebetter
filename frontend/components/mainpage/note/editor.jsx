@@ -18,7 +18,7 @@ class Editor extends React.Component {
     }
 
     // componentDidMount(){
-    //     this.props.fetchNote(this.props.note);
+    //     this.props.fetchNote(this.props.noteId);
     // }
     handleTitle(e){
         this.setState({title: e.target.value})
