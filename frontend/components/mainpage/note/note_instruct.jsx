@@ -8,7 +8,7 @@ class NoteInstruc extends React.Component {
     render() { 
         return ( 
             <div className="instruction">
-                Please Create or Select a note
+                <div className=".instruction-text">Create or Select a Note...</div>
             </div>
          );
     }
