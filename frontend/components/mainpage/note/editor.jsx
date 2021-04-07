@@ -43,7 +43,7 @@ class Editor extends React.Component {
             <div className="note-header">
                 <div className="note-header-title-button">
                     <div className="note-header-title">
-                        <h1>{note.title}</h1>
+                        <h1>NoteBook Name</h1>
                     </div>
                     <div className="note-action-button">
                         <button onClick={this.handleDelete}><i className="fas fa-trash"></i></button>
