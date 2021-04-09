@@ -9,7 +9,6 @@ import { format } from 'timeago.js';
 class Editor extends React.Component {
     constructor(props) {
         super(props);
-        // debugger
         this.state = Object.assign({}, this.props.note)
         this.handleDelete = this.handleDelete.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
