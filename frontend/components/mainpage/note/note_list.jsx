@@ -13,8 +13,11 @@ class NoteList extends React.Component {
     render() { 
         if (this.props.notes === {}){
             return <p>No notes yet!</p>;
-        } 
-        const noteLi = this.props.notes.map(note => {
+        }
+        const sortedNotes = this.props.notes.sort(function (a, b) {
+            return new Date(b.updated_at) - new Date(a.updated_at);
+        });
+        const noteLi = sortedNotes.map(note => {
             return <li key={note.id}>
                 <Link className="notes-list-box" to={`/app/notes/${note.id}`}>
                     <div className="notes-list-box-header">
