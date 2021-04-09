@@ -5,8 +5,10 @@ import { withRouter } from "react-router-dom";
 import NoteIndex from './note_index';
 
 const mstp = (state, ownProps) => {
+    allNotes = Object.values(state.entities.notes);
+    sortedNotes = allNotes.sorted(allNotes.updated_at);
     return {
-        notes: Object.values(state.entities.notes),
+        notes: sortedNotes,
         title: 'All Notes'
     }
 }
