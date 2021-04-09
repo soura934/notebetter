@@ -16,9 +16,15 @@ class Editor extends React.Component {
         this.handleBody = this.handleBody.bind(this);
     }
 
-    // componentDidMount(){
-    //     this.props.fetchNote(this.props.noteId);
-    // }
+    componentDidMount(){
+        this.props.fetchNote(this.props.match.params.noteId);
+    }
+    omponentDidUpdate(prevProps) {
+        if (this.props.match.params.noteId !== prevProps.match.params.noteId) {
+          this.props.fetchNote(this.props.match.params.noteId);
+        }
+      }
+
     handleTitle(e){
         this.setState({title: e.target.value})
     }
