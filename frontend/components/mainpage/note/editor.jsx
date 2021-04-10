@@ -1,9 +1,12 @@
 import React from "react";
 import { format } from 'timeago.js';
 
-
-// Must create notes from here instead from nav
-
+// ///////////////////////////////////////////////////////
+// //////////////////////////////////////////////////////
+// Must remove the new extra note with the same id as the one
+// last clicked on or last created when you click on a note list
+// //////////////////////////////////////////////////////////
+// //////////////////////////////////////////////////////////
 
 
 class Editor extends React.Component {
@@ -17,13 +20,12 @@ class Editor extends React.Component {
     }
 
     componentDidMount(){
-        this.props.fetchNote(this.props.match.params.noteId);
+        this.props.fetchNote(this.state.id);
     }
     omponentDidUpdate(prevProps) {
         
         if (this.props.match.params.noteId !== prevProps.match.params.noteId) {
           this.props.fetchNote(this.props.match.params.noteId);
-          this.setState(this.props.note);
         }
       }
 
