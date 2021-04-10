@@ -20,8 +20,10 @@ class Editor extends React.Component {
         this.props.fetchNote(this.props.match.params.noteId);
     }
     omponentDidUpdate(prevProps) {
+        
         if (this.props.match.params.noteId !== prevProps.match.params.noteId) {
           this.props.fetchNote(this.props.match.params.noteId);
+          this.setState(this.props.note);
         }
       }
 
