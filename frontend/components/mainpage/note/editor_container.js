@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import {deleteNote, updateNote, fetchNote} from "../../../actions/note_actions"
+import {deleteNote, updateNote, fetchNote, fetchNotes} from "../../../actions/note_actions"
 import Editor from './editor';
 
 const mstp = (state, ownProps) => {
