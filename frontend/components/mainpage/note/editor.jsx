@@ -20,12 +20,12 @@ class Editor extends React.Component {
     }
 
     componentDidMount(){
-        this.props.fetchNotes();
+        // this.props.fetchNote(this.state.id);
     }
     componentDidUpdate(prevProps) {
         
         if (this.props.match.params.noteId !== prevProps.match.params.noteId) {
-          this.props.fetchNote(this.props.match.params.noteId);
+          this.props.fetchNotes();
         }
       }
 
