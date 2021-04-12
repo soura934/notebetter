@@ -14,7 +14,8 @@ const mdp = (dispatch) => {
     return {
         fetchNote: (note) => dispatch(fetchNote(note)),
         deleteNote: (noteId) => dispatch(deleteNote(noteId)),
-        updateNote: (note) => dispatch(updateNote(note))
+        updateNote: (note) => dispatch(updateNote(note)),
+        fetchNotes: () => dispatch(fetchNotes())
     }
 }
 
