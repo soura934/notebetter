@@ -7,6 +7,10 @@ class User < ApplicationRecord
         class_name: :Note,
         primary_key: :id,
         foreign_key: :user_id
+    has_many :notebooks,
+        class_name: :Notebook,
+        primary_key: :id,
+        foreign_key: :user_id
 
     after_initialize :ensure_session_token
     attr_reader :password

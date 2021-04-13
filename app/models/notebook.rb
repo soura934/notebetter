@@ -1,4 +1,4 @@
-class Note < ApplicationRecord
+class Notebook < ApplicationRecord 
     validates :title, presence:true
 
     belongs_to :user,
@@ -6,6 +6,5 @@ class Note < ApplicationRecord
         primary_key: :id,
         foreign_key: :user_id
 
-    belongs_to :notebook
-
+    has_many :notes
 end
