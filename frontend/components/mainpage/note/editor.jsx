@@ -12,9 +12,8 @@ import { format } from 'timeago.js';
 class Editor extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = Object.assign({}, this.props.note);
-        
+            this.state = Object.assign({}, this.props.note)
+        // debugger
         this.handleDelete = this.handleDelete.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
         this.handleTitle = this.handleTitle.bind(this);
@@ -25,7 +24,7 @@ class Editor extends React.Component {
         // thi
     }
     componentDidUpdate(prevProps) {
-        
+        // debugger
         if (this.props.match.params.noteId !== prevProps.match.params.noteId) {
           this.state;
         }
