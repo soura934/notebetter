@@ -12,7 +12,10 @@ import { format } from 'timeago.js';
 class Editor extends React.Component {
     constructor(props) {
         super(props);
-        this.state = Object.assign({}, this.props.note)
+        if (props.note) {
+            this.state = Object.assign({}, this.props.note);
+        }
+        
         this.handleDelete = this.handleDelete.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
         this.handleTitle = this.handleTitle.bind(this);
@@ -20,7 +23,12 @@ class Editor extends React.Component {
     }
 
     componentDidMount(){
-        // this.props.fetchNote(this.state.id);
+        this.setState({
+            id: this.props.note.id,
+            title: this.props.note.title,
+            body: this.props.note.body
+        })
+        // this.saveOnClose = window.addEventListener('beforeunload', () => this.props.updateNote(this.state));
     }
     componentDidUpdate(prevProps) {
         
