@@ -26,8 +26,9 @@ class Editor extends React.Component {
     componentDidUpdate(prevProps) {
         // debugger
         if (this.props.match.params.noteId !== prevProps.match.params.noteId) {
-          this.state;
+          this.setState({id: this.props.note.id, title: this.props.note.title, body: this.props.note.body});
         }
+        // need to find a way when update the state to change to the newest note
       }
 
     handleTitle(e){

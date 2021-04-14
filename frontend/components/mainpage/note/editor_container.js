@@ -1,6 +1,8 @@
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import {deleteNote, updateNote, fetchNote, fetchNotes} from "../../../actions/note_actions"
 import Editor from './editor';
+
 
 const mstp = (state, ownProps) => {
     // debugger
@@ -22,4 +24,4 @@ const mdp = (dispatch) => {
 
 
 
-export default connect(mstp, mdp)(Editor);
+export default withRouter(connect(mstp, mdp)(Editor));
