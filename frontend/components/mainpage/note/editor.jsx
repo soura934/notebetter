@@ -12,9 +12,8 @@ import { format } from 'timeago.js';
 class Editor extends React.Component {
     constructor(props) {
         super(props);
-        if (props.note) {
-            this.state = Object.assign({}, this.props.note);
-        }
+
+        this.state = Object.assign({}, this.props.note);
         
         this.handleDelete = this.handleDelete.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
@@ -23,12 +22,7 @@ class Editor extends React.Component {
     }
 
     componentDidMount(){
-        this.setState({
-            id: this.props.note.id,
-            title: this.props.note.title,
-            body: this.props.note.body
-        })
-        // this.saveOnClose = window.addEventListener('beforeunload', () => this.props.updateNote(this.state));
+        // thi
     }
     componentDidUpdate(prevProps) {
         
@@ -38,6 +32,7 @@ class Editor extends React.Component {
       }
 
     handleTitle(e){
+        e.preventDefault();
         this.setState({title: e.target.value})
     }
     handleBody(e){
@@ -74,8 +69,8 @@ class Editor extends React.Component {
                 <div className="note-body-title">
                     <input placeholder="Title" 
                     value={this.state.title}
-                    onChange={this.handleTitle}
-                    onBlur={this.handleUpdate}>
+                    onChange={this.handleTitle()}
+                    onBlur={this.handleUpdate()}>
                     </input>
                 </div>
                 <div className="note-body-body">
