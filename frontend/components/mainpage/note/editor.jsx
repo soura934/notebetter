@@ -27,7 +27,7 @@ class Editor extends React.Component {
     componentDidUpdate(prevProps) {
         
         if (this.props.match.params.noteId !== prevProps.match.params.noteId) {
-          this.props.fetchNotes();
+          this.state;
         }
       }
 
@@ -69,8 +69,8 @@ class Editor extends React.Component {
                 <div className="note-body-title">
                     <input placeholder="Title" 
                     value={this.state.title}
-                    onChange={this.handleTitle()}
-                    onBlur={this.handleUpdate()}>
+                    onChange={this.handleTitle}
+                    onBlur={this.handleUpdate}>
                     </input>
                 </div>
                 <div className="note-body-body">
