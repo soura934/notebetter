@@ -12,7 +12,11 @@ import { format } from 'timeago.js';
 class Editor extends React.Component {
     constructor(props) {
         super(props);
-            this.state = Object.assign({}, this.props.note)
+            this.state = {
+                title: this.props.note.title,
+                body: this.props.note.body,
+                user_id: this.props.currentUser.id
+            }
         // debugger
         this.handleDelete = this.handleDelete.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
@@ -21,12 +25,13 @@ class Editor extends React.Component {
     }
 
     componentDidMount(){
-        // thi
+        // this.setState(this.props.note);
+        this.props.fetchNote(this.props.noteId);
     }
     componentDidUpdate(prevProps) {
         // debugger
-        if (this.props.match.params.noteId !== prevProps.match.params.noteId) {
-        }
+        // if (this.props.match.params.noteId !== prevProps.match.params.noteId) {
+        // }
         // need to find a way when update the state to change to the newest note
       }
 
@@ -41,7 +46,8 @@ class Editor extends React.Component {
     handleDelete(){
         this.props.deleteNote(this.props.noteId)
     }
-    handleUpdate(){
+    handleUpdate(e){
+        e.preventDefault();
         this.props.updateNote(this.state);
     }
 
