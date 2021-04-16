@@ -13,9 +13,9 @@ class Editor extends React.Component {
     constructor(props) {
         super(props);
             this.state = {
-                title: this.props.note.title,
-                body: this.props.note.body,
-                user_id: this.props.currentUser.id
+                id: null,
+                title: "",
+                body: "",
             }
         // debugger
         this.handleDelete = this.handleDelete.bind(this);
@@ -25,8 +25,7 @@ class Editor extends React.Component {
     }
 
     componentDidMount(){
-        // this.setState(this.props.note);
-        this.props.fetchNote(this.props.noteId);
+        this.setState(this.props.note);
     }
     componentDidUpdate(prevProps) {
         // debugger
