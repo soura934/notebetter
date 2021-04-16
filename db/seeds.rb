@@ -21,11 +21,15 @@ ActiveRecord::Base.transaction do
         title: 'Notebook1',
         user_id: user.id
     )
-    note = Note.create!(
-        title: 'Project',
-        body: 'Build a fullstack project',
-        user_id: user.id,
-        notebook_id: notebook.id,
-    )
+    notes = []
+    1.upto(10) do |number|
+        note = Note.create!(
+            title: Faker::Superhero.name,
+            body: Faker::GreekPhilosophers.quote,
+            user_id: user.id,
+            notebook_id: notebook.id,
+        )
+        notes << note
+    end
 
 end
