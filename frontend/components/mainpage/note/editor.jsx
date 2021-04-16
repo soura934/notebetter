@@ -48,7 +48,8 @@ class Editor extends React.Component {
     }
     handleUpdate(e){
         e.preventDefault();
-        this.props.updateNote(this.state);
+        const {body, title, id} = this.state;
+        this.props.updateNote({body, title, id});
     }
 
     render() { 

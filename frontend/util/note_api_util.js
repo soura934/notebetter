@@ -20,11 +20,11 @@ export const createNote = (note) => {
     })
 }
 
-export const updateNote = (note) => {
+export const updateNote = ({body, title, id}) => {
     return $.ajax({
         method: 'PATCH',
-        url: `/api/notes/${note.id}`,
-        data: { note }
+        url: `/api/notes/${id}`,
+        data: { note: {body, title} }
     })
 }
 export const deleteNote = (noteId) => {

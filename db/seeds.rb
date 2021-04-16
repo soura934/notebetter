@@ -6,17 +6,26 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+ActiveRecord::Base.transaction do
 
-User.delete_all
-Note.delete_all
+    Note.delete_all
+    Notebook.delete_all
+    User.delete_all
 
-user = User.create!(
-    email: 'email@email.com',
-    password: 'password'
-)
-note = Note.create!(
-    title: 'Project',
-    body: 'Build a fullstack project',
-    user_id: user.id,
-    notebook_id: 1,
-)
+
+    user = User.create!(
+        email: 'email@email.com',
+        password: 'password'
+    )
+    notebook = Notebook.create!(
+        title: 'Notebook1',
+        user_id: user.id
+    )
+    note = Note.create!(
+        title: 'Project',
+        body: 'Build a fullstack project',
+        user_id: user.id,
+        notebook_id: notebook.id,
+    )
+
+end
