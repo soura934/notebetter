@@ -6,7 +6,7 @@ class Sidebar extends React.Component {
     constructor(props) {
         super(props);
         // debugger
-        this.state = {title: 'Untitled', body: '', user_id: this.props.currentUser.id, notebook_id: 1};  
+        this.state = {title: 'Untitled', body: '', user_id: this.props.currentUser.id};  
         this.handleCreateNote = this.handleCreateNote.bind(this);
     }
 
