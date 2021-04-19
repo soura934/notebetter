@@ -51,7 +51,7 @@ class Sidebar extends React.Component {
                     </Link>
                 </ul>
                 <ul>
-                <Link to="nothing">
+                <Link to="/app/notebooks">
                     <li>
                             <i className="fas fa-book"></i>
                             Notebooks

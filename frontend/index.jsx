@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     window.dispatch = store.dispatch;
     window.getState = store.dispatch;
-    window.fetchNotebooks = fetchNotebooks;
+    // window.fetchNotebooks = fetchNotebooks;
     
     const root = document.getElementById("root");
     ReactDOM.render(<Root store={store} />, root);
