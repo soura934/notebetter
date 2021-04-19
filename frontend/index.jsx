@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-import {fetchNotebooks} from "./actions/notebook_actions";
+import {fetchNotebooks} from "./util/notebook_api_util";
 // import {signup} from "./util/session_api_util";
 // import {logout} from "./util/session_api_util"
 import configureStore from "./store/store"
