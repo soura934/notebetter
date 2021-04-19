@@ -12,14 +12,14 @@ export const receiveNotebook = notebook => {
     }
 }
 
-export const receiveNotes = notebooks => {
+export const receiveNotebooks = notebooks => {
     return {
         type: RECEIVE_NOTEBOOKS,
         notebooks
     }
 }
 
-export const destroyNote = (notebookId) => {
+export const destroyNotebook = (notebookId) => {
     return {
         type: DESTROY_NOTEBOOK,
         notebookId
