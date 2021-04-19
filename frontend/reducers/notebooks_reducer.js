@@ -8,7 +8,7 @@ import {
     Object.freeze(oldState);
     switch (action.type) {
         case RECEIVE_NOTEBOOK:
-            return Object.assign({}, oldState, action);// find out about the action
+            return Object.assign({}, oldState, {[action.notebook.id]: action.notebook});// find out about the action
         case RECEIVE_NOTEBOOKS:
             return action.notebooks.notebooks; // make sure it's right
         case DESTROY_NOTEBOOK:
