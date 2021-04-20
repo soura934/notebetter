@@ -1,4 +1,5 @@
 import React from "react";
+import { format } from 'timeago.js';
 
 class NotebookIndex extends React.Component {
     constructor(props) {
@@ -22,9 +23,20 @@ class NotebookIndex extends React.Component {
         }
 
         const notebookLi = this.props.notebooks.map(notebook => {
-            return  <li key={notebook.id}>
-                        {notebook.title}
-                    </li>
+            return      <tr key={notebook.id}>
+                            <td className="notebook-title">
+                                {notebook.title}
+                            </td>
+                            <td className="notebook-createdby">
+                                {this.props.user.email}
+                            </td>
+                            <td className="notebook-updated">
+                                {format(notebook.updated_at)}
+                            </td>
+                            <td className="notebook-action">
+                            <i className="fas fa-trash"></i>
+                            </td>
+                        </tr>
 
         })
         
@@ -34,11 +46,13 @@ class NotebookIndex extends React.Component {
                         <div className="notebook-header-top">
                             <h1>Notebooks</h1>
                         </div>
-                        <div className="notebook-header-count">
-                            {this.count()}
-                        </div>
-                        <div className="new-notebook">
-                            <h1>New Notebook</h1>
+                        <div className="notebook-header-bottom">
+                            <div className="notebook-header-count">
+                                {this.count()}
+                            </div>
+                            <div className="new-notebook">
+                                <h2>New Notebook</h2>
+                            </div>
                         </div>
                     </div>
                     <table>
@@ -47,7 +61,7 @@ class NotebookIndex extends React.Component {
                                 <th className="title">Title</th>
                                 <th className="created">Created by</th>
                                 <th className="updated">Updated</th>
-                                <th className="actions">Actions</th>                            
+                                <th className="action">Action</th>                            
                             </tr>
                         </thead>
                         <tbody>

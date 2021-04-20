@@ -1,0 +1,52 @@
+.notebook_index {
+    padding: 40px;
+    height: 100%;
+    min-width: 900px;
+    table {
+        min-width: inherit;
+        border-collapse: collapse;
+        tr {
+            height: 30px;
+        }
+        thead {
+            text-align: left;
+            background: lightgray;
+            border-bottom: 1px solid gray;
+        }
+        tbody {
+            tr {
+                height: 30px;
+            }
+        }
+    }
+}
+.notebook-header-top {
+    margin-bottom: 40px;
+    h1 {
+        font-size: 25px;
+    }
+}
+.notebook-header-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid black;
+}
+.notebook-header-count {
+    h2 {
+        font-size: 20px;
+    }
+}
+.new-notebook {
+    h2 {
+        font-size: 20px;
+        color: green;
+    }
+}
+.title {
+    padding-left: 5px;
+}
+.action {
+    text-align: right;
+    padding-right: 5px;
+}

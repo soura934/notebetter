@@ -6,7 +6,7 @@ import NotebookIndex from './notebook_index';
 const mstp = (state, ownProps) => {
     return {
         notebooks: Object.values(state.entities.notebooks),
-        title: 'All Notebooks'
+        user: state.entities.users[state.session.id]
     }
 }
 

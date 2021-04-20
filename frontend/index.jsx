@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-// import {fetchNotebooks} from "./util/notebook_api_util";
+import {createNotebook} from "./util/notebook_api_util";
 // import {signup} from "./util/session_api_util";
 // import {logout} from "./util/session_api_util"
 import configureStore from "./store/store"
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     window.dispatch = store.dispatch;
     window.getState = store.dispatch;
-    // window.fetchNotebooks = fetchNotebooks;
+    window.createNotebook = createNotebook;
     
     const root = document.getElementById("root");
     ReactDOM.render(<Root store={store} />, root);
