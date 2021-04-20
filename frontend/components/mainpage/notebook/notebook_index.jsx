@@ -41,7 +41,19 @@ class NotebookIndex extends React.Component {
                             <h1>New Notebook</h1>
                         </div>
                     </div>
-                    {notebookLi}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th className="title">Title</th>
+                                <th className="created">Created by</th>
+                                <th className="updated">Updated</th>
+                                <th className="actions">Actions</th>                            
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {notebookLi}
+                        </tbody>
+                    </table>
                 </div>
             </>
          );
