@@ -5,9 +5,20 @@ class NotebookIndex extends React.Component {
         super(props);
 
     }
+    componentDidMount(){
+        this.props.fetchNotebooks();
+    }
     render() { 
+        if (this.props.notebooks === {}){
+            return <p>No notebooks yet!</p>;
+        }
+        const notebookLi = this.props.notebooks.map(notebook => {
+            return <li key={notebook.id}>
+                {notebook.title}
+            </li>
+        })
         return ( <>
-            Notebook
+                {notebookLi}
             </>
          );
     }

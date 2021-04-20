@@ -5,8 +5,8 @@ import NotebookIndex from './notebook_index';
 
 const mstp = (state, ownProps) => {
     return {
-        notes: Object.values(state.entities.notebooks),
-        title: 'All Notes'
+        notebooks: Object.values(state.entities.notebooks),
+        title: 'All Notebooks'
     }
 }
 
