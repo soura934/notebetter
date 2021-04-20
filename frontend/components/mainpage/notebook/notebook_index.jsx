@@ -37,7 +37,6 @@ class NotebookIndex extends React.Component {
                             <i className="fas fa-trash"></i>
                             </td>
                         </tr>
-
         })
         
         return ( <>
