@@ -6,7 +6,7 @@
         min-width: inherit;
         border-collapse: collapse;
         tr {
-            height: 30px;
+            height: 40px;
         }
         thead {
             text-align: left;
@@ -15,7 +15,7 @@
         }
         tbody {
             tr {
-                height: 30px;
+                height: 40px;
             }
         }
     }
@@ -49,4 +49,13 @@
 .action {
     text-align: right;
     padding-right: 5px;
+}
+.notebook-title {
+    padding-left: 7px;
+}
+.notebook-action {
+    text-align: right;
+    position: relative;
+    padding-right: 10px;
+
 }
