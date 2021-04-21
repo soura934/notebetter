@@ -1,6 +1,6 @@
 import React from "react";
 
-class NotebookForm extends Component {
+class NotebookForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {  }
