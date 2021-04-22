@@ -33,7 +33,7 @@ class NotebookForm extends React.Component {
                     value={this.state.title}
                 />
 
-                <button>Continue</button>
+                <button>Save</button>
             </form>
         </div> );
     }

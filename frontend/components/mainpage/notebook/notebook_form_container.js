@@ -15,11 +15,3 @@ const mdp = (dispatch) => {
     }
 }
 export default connect(mstp, mdp)(NotebookForm);
-
-
-
-
-
-
-
-export default NotebookForm
