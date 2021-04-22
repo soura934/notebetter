@@ -1,4 +1,4 @@
-import { fetchNotebooks, createNotebook } from '../../../actions/notebook_actions';
+import { fetchNotebooks } from '../../../actions/notebook_actions';
 import { connect } from 'react-redux';
 import NotebookIndex from './notebook_index';
 

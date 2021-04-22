@@ -4,12 +4,8 @@ import { format } from 'timeago.js';
 class NotebookIndex extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            title: '',
-            user_id: this.props.user,
-        }
+
         this.count = this.count.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
     componentDidMount(){
         this.props.fetchNotebooks();
@@ -22,15 +18,7 @@ class NotebookIndex extends React.Component {
         }
 
     }
-    handleSubmit(e){
-        e.preventDefault();
-        this.props.createNotebook(this.state);
-    }
-    handleChange(field){
-        return (e) => {
-            this.setState({[field]: e.target.value});
-        };
-    }
+
     render() { 
         if (this.props.notebooks === {}){
             return <p>No notebooks yet!</p>;
