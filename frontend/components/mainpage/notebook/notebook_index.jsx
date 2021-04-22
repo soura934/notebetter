@@ -1,5 +1,6 @@
 import React from "react";
 import { format } from 'timeago.js';
+import NotebookForm from 'notebook_form_container';
 
 class NotebookIndex extends React.Component {
     constructor(props) {
@@ -52,7 +53,7 @@ class NotebookIndex extends React.Component {
                                 {this.count()}
                             </div>
                             <div className="new-notebook">
-                                <h2>New Notebook</h2>
+                                <button>New Notebook</button>
                             </div>
                         </div>
                     </div>

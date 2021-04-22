@@ -11,7 +11,6 @@ const mstp = (state, ownProps) => {
 
 const mdp = (dispatch) => {
     return {
-        fetchNotebooks: () => dispatch(fetchNotebooks()),
         createNotebook: (notebook) => dispatch(createNotebook(notebook))
     }
 }
