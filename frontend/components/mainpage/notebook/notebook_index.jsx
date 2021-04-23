@@ -69,9 +69,9 @@ class NotebookIndex extends React.Component {
                                 {this.count()}
                             </div>
                             <div className="new-notebook">
-                                <button >New Notebook</button>
+                                <button onClick={()=>this.setState({openModal: true})}>New Notebook</button>
                             </div>
-                            <div className={this.state.openModal ? 'open-modal' : 'none'}>{this.createNotebookModal()}</div>
+                            <div className={this.state.openModal ? 'open-modal' : 'none-modal'}>{this.createNotebookModal()}</div>
                         </div>
                     </div>
                     <table>

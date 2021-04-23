@@ -5,7 +5,7 @@ class NotebookForm extends React.Component {
         super(props);
         this.state = {
             title: '',
-            user_id: this.props.user,
+            user_id: this.props.user.id,
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
