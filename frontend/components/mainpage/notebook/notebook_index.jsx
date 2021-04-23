@@ -56,7 +56,7 @@ class NotebookIndex extends React.Component {
                                 {this.count()}
                             </div>
                             <div className="new-notebook">
-                                <button onClick={this.createNotebookModal}>New Notebook</button>
+                                <button >New Notebook</button>
                             </div>
                         </div>
                     </div>

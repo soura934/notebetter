@@ -1,9 +1,9 @@
 .notebook_index {
     padding: 40px;
-    height: 100%;
-    min-width: 900px;
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
     table {
-        min-width: inherit;
+        width: inherit;
         border-collapse: collapse;
         tr {
             height: 40px;
