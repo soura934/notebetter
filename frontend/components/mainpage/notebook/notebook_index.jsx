@@ -1,5 +1,6 @@
 import React from "react";
 import { format } from 'timeago.js';
+import { Link } from 'react-router-dom';
 import NotebookForm from './notebook_form_container';
 
 class NotebookIndex extends React.Component {
@@ -44,7 +45,7 @@ class NotebookIndex extends React.Component {
         const notebookLi = this.props.notebooks.map(notebook => {
             return      <tr key={notebook.id}>
                             <td className="notebook-title">
-                                {notebook.title}
+                                <Link>{notebook.title}</Link>
                             </td>
                             <td className="notebook-createdby">
                                 {this.props.user.email}

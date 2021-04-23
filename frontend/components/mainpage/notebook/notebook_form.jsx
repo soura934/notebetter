@@ -13,6 +13,7 @@ class NotebookForm extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         this.props.createNotebook(this.state);
+        this.setState({ title: ''});
     }
 
     handleChange(field){
