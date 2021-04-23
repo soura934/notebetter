@@ -5,8 +5,10 @@ import NotebookForm from './notebook_form_container';
 class NotebookIndex extends React.Component {
     constructor(props) {
         super(props);
+        this.state = { openModal: false};
 
         this.count = this.count.bind(this);
+        this.createNotebookModal = this.createNotebookModal.bind(this);
     }
     componentDidMount(){
         this.props.fetchNotebooks();
@@ -20,7 +22,18 @@ class NotebookIndex extends React.Component {
 
     }
     createNotebookModal(){
-        <NotebookForm />
+        if (this.state.openModal) {
+            return (
+                <div className="modal">
+                    <i 
+                    className="fa fa-window-close"
+                    onClick={() => this.setState({openModal: false})}></i>
+                    <div><NotebookForm /></div>
+                </div>
+            )
+        } else {
+            return null
+        }
     }
 
     render() { 
@@ -58,6 +71,7 @@ class NotebookIndex extends React.Component {
                             <div className="new-notebook">
                                 <button >New Notebook</button>
                             </div>
+                            <div className={this.state.openModal ? 'open-modal' : 'none'}>{this.createNotebookModal()}</div>
                         </div>
                     </div>
                     <table>
