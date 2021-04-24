@@ -57,5 +57,14 @@
 .notebook-action {
     text-align: right;
     position: relative;
-    padding-right: 10px;
+    padding-right: 15px;
+}
+.modal {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 10;
 }
