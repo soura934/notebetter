@@ -76,4 +76,22 @@
     height: 300px;
     background-color: white;
     transform: translate(-50%, -50%);
+    padding: 10px 25px 0;
+    align-items: center;
+}
+.modal-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h2 {
+        font-size: 18px;
+    }
+    button {
+        background-color: white;
+        i {
+            size: 100%;
+            background: green;
+            color: white;
+        }
+    }
 }

@@ -25,15 +25,17 @@ class NotebookForm extends React.Component {
     render() { 
         return ( <div>
             <form className="notebook-form" onSubmit={this.handleSubmit}>
-
-                <input
-                    type="text"
-                    id="notebook-title"
-                    onChange={this.handleChange('title')}
-                    placeholder='Notebook name'
-                    value={this.state.title}
-                />
-
+                <label for="name">
+                    <h3>Name</h3>
+                    <input
+                        name="name"
+                        type="text"
+                        id="notebook-title"
+                        onChange={this.handleChange('title')}
+                        placeholder='Notebook name'
+                        value={this.state.title}
+                    />
+                </label>
                 <button>Save</button>
             </form>
         </div> );

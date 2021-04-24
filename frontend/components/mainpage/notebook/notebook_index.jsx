@@ -27,10 +27,12 @@ class NotebookIndex extends React.Component {
             return (
                 <div className="modal">
                     <div className="modal-child">
-                        <h2>Create new notebook</h2>
-                        <button onClick={() => this.setState({openModal: false})}>
-                            <i className="fa fa-window-close"></i>
-                        </button>
+                        <div className="modal-info">
+                            <h2>Create new notebook</h2>
+                            <button onClick={() => this.setState({openModal: false})}>
+                                <i className="fa fa-window-close"></i>
+                            </button>
+                        </div>
                         <p>Notebooks are useful for grouping notes around a common topic. They can be private or shared.</p>
                         <div><NotebookForm /></div>
                     </div>
