@@ -78,20 +78,25 @@
     transform: translate(-50%, -50%);
     padding: 10px 25px 0;
     align-items: center;
+    p {
+        font-size: 14px;
+        padding-top: 10px;
+        color: #737373;
+    }
 }
 .modal-info {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-bottom: 15px;
     h2 {
         font-size: 18px;
+        font-weight: 600;
     }
     button {
         background-color: white;
         i {
-            size: 100%;
-            background: green;
-            color: white;
+            color: green;
         }
     }
 }
