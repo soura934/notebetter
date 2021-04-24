@@ -16,9 +16,9 @@ class NotebookIndex extends React.Component {
     }
     count(){
         if (this.props.notebooks.length > 1){
-            return <h2>{this.props.notebooks.length} notebook</h2>
-        } else {
             return <h2>{this.props.notebooks.length} notebooks</h2>
+        } else {
+            return <h2>{this.props.notebooks.length} notebook</h2>
         }
 
     }
