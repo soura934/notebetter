@@ -23,7 +23,7 @@ class NotebookForm extends React.Component {
     }
     
     render() { 
-        return ( <div>
+        return ( <div className="notebook-form-parent">
             <form className="notebook-form" onSubmit={this.handleSubmit}>
                 <label for="name">
                     <h3>Name</h3>
@@ -36,7 +36,9 @@ class NotebookForm extends React.Component {
                         value={this.state.title}
                     />
                 </label>
-                <button>Save</button>
+                <div className="notebook-form-button-parent">
+                    <button className="notebook-form-button">Save</button>
+                </div>
             </form>
         </div> );
     }
