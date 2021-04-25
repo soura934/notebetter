@@ -1,4 +1,5 @@
 import React from "react"
+import NoteIndex from "../note/note_index_container"
 
 class NotebookShow extends React.Component {
     constructor(props) {
@@ -6,8 +7,11 @@ class NotebookShow extends React.Component {
         this.state = {  }
     }
     render() { 
+        // if (!this.props.notes) {
+        //     return <div>no notebooks yet</div>
+        // } 
         return ( 
-            null
+            <NoteIndex notes={this.props.notes} />
          );
     }
 }
