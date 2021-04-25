@@ -61,7 +61,9 @@ class Sidebar extends React.Component {
             </div>
             <div className="sidebar-footer">
                 <div className="icon-footer">
-                    Site Icons
+                    <a href="https://github.com/soura934" target="_blank"><i className="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/mansour-dione" target="_blank"><i className="fab fa-linkedin-in"></i></a>
+                    <a href="https://angel.co/u/mansour-dione" target="_blank"><i className="fab fa-angellist"></i></a>
                 </div>
             </div>
         </div>

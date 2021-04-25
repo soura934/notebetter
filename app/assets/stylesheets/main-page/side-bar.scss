@@ -51,7 +51,7 @@
     overflow: auto;
 }
 .contents {
-    height: 60%;
+    height: 50%;
     ul {
         li {
             display: flex;
@@ -69,7 +69,11 @@
 }
 
 .sidebar-footer {
-    padding: 8px 15px;
+    padding: 15px 15px 0;
     border-top: 1px solid gray;
 }
-
+.icon-footer {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 25px;
+}
