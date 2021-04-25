@@ -4,9 +4,9 @@ import NotebookShow from './notebook_show';
 
 
 const mstp = (state, ownProps) => {
+    debugger
     return {
-        notebooks: Object.values(state.entities.notebooks),
-
+        notes: state.entities.notebooks[ownProps.match.params.notebookId].notes
     }
 }
 
