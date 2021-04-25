@@ -14,11 +14,17 @@
 
 .sidebar-profile {
     display: flex;
-    align-items: center;
-    padding: 20px;
+    padding-top: 20px;
+    justify-content: center;
 }
 .profile-name {
     padding-left: 10px;
+}
+#logout {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    font-weight: 600;
 }
 
 .fa-angle-down {

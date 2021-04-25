@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 class Sidebar extends React.Component {
     constructor(props) {
         super(props);
-        // debugger
         this.state = {title: 'Untitled', body: '', user_id: this.props.currentUser.id};  
         this.handleCreateNote = this.handleCreateNote.bind(this);
     }
@@ -16,7 +15,6 @@ class Sidebar extends React.Component {
             this.props.createNote(this.state)
             .then((obj) => {
                 let noteId = obj.note.id;
-                // debugger
                 return (this.props.history.push(`/app/notes/${noteId}`)) 
             })
 
@@ -30,8 +28,7 @@ class Sidebar extends React.Component {
                 <div className="sidebar-profile">
                     <i className="fa fa-user" aria-hidden="true"></i>
                     <div className="profile-name">
-                        {this.props.currentUser.email}
-                        <i className="fas fa-angle-down"></i>                
+                        {this.props.currentUser.email}          
                     </div>
                 </div> 
                 <div id="logout">
