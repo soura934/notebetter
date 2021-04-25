@@ -9,6 +9,7 @@ import NoteIndexContainer from "./mainpage/note/note_index_container";
 import EditorContainer from "./mainpage/note/editor_container";
 import NoteInstruc from "./mainpage/note/note_instruct";
 import NotebookIndexContainer from "./mainpage/notebook/notebook_index_container";
+import NotebookShowContainer from "./mainpage/notebook/notebook_show_container";
 
 
 
@@ -23,6 +24,7 @@ const App = () => (
     <ProtectedRoute exact path='/app/notes' component={NoteInstruc} />
     <ProtectedRoute path='/app/notes/:noteId' component={EditorContainer} />
     <ProtectedRoute exact path='/app/notebooks' component={NotebookIndexContainer} />
+    <ProtectedRoute exact path='/app/notebooks/:notebookId/notes' component={NotebookShowContainer} />
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <AuthRoute exact path="/signup" component={SignupFormContainer} />
     <Route exact path="/" component={HomePage} />
