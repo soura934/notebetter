@@ -6,11 +6,11 @@ class NotebookShow extends React.Component {
         super(props);
     }
     render() { 
-        if (!this.props.notes) {
-            return <div>no notebooks yet</div>
+        if (this.props.notes === {}) {
+            return <div>no notes yet</div>
         } 
         return ( 
-            <NoteIndex notes={this.props.notes} />
+            <NoteIndex notes={this.props.notebook.notes} />
          );
     }
 }

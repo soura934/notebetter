@@ -51,7 +51,9 @@ class NotebookIndex extends React.Component {
         const notebookLi = this.props.notebooks.map(notebook => {
             return      <tr key={notebook.id}>
                             <td className="notebook-title">
-                                <Link>{notebook.title}</Link>
+                                <Link to={`/app/notebooks/${notebook.id}/notes`}>
+                                {notebook.title}
+                                </Link>
                             </td>
                             <td className="notebook-createdby">
                                 {this.props.user.email}
