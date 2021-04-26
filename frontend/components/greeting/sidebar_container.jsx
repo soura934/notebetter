@@ -5,7 +5,7 @@ import { createNote } from "../../actions/note_actions";
 import Sidebar from './sidebar';
 
 const mst = (state, ownProps) => {
-    debugger
+    // debugger
     return {
         currentUser: state.entities.users[state.session.id],
         notebookId: state.entities.notebooks

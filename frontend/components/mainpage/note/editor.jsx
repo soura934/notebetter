@@ -1,13 +1,6 @@
 import React from "react";
 import { format } from 'timeago.js';
 
-// ///////////////////////////////////////////////////////
-// //////////////////////////////////////////////////////
-// Must remove the new extra note with the same id as the one
-// last clicked on or last created when you click on a note list
-// //////////////////////////////////////////////////////////
-// //////////////////////////////////////////////////////////
-
 
 class Editor extends React.Component {
     constructor(props) {
@@ -16,6 +9,8 @@ class Editor extends React.Component {
                 id: null,
                 title: "",
                 body: "",
+                // notebooks: this.props.notebooks,
+                // ready: false
             }
         // debugger
         this.handleDelete = this.handleDelete.bind(this);
@@ -26,13 +21,18 @@ class Editor extends React.Component {
 
     componentDidMount(){
         this.setState(this.props.note);
+        // this.props.fetchNotebooks().then(payload => {
+        //     let notebooks = {};
+        //     debugger
+        //     payload.forEach(notebook =>  notebooks[notebook.id] = notebook)
+        //     this.setState({notebooks})
+        //     this.setState({ready: true});
+        // })
     }
     componentDidUpdate(prevProps) {
-        // debugger
         if (this.props.match.params.noteId !== prevProps.match.params.noteId) {
             this.setState(this.props.note);
         }
-        // need to find a way when update the state to change to the newest note
       }
 
     handleTitle(e){
@@ -55,13 +55,14 @@ class Editor extends React.Component {
     render() { 
         
         const note = this.props.note
+        // const notebook = Object.keys(this.state.notebooks).length > 0 ? this.state.notebooks[note.notebook_id] : {title:""};
         return ( <>
-        {this.props.note ? <div className="note"> 
+        {this.props ? <div className="note"> 
         
             <div className="note-header">
                 <div className="note-header-title-button">
                     <div className="note-header-title">
-                        <h1>null</h1>
+                        <h1>Notebook</h1>
                     </div>
                     <div className="note-action-button">
                         <button onClick={this.handleDelete}><i className="fas fa-trash"></i></button>
