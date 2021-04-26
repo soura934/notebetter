@@ -5,8 +5,10 @@ import { createNote } from "../../actions/note_actions";
 import Sidebar from './sidebar';
 
 const mst = (state, ownProps) => {
+    debugger
     return {
-        currentUser: state.entities.users[state.session.id]
+        currentUser: state.entities.users[state.session.id],
+        notebookId: state.entities.notebooks
     } 
 }
 
