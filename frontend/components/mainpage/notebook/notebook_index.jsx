@@ -47,8 +47,10 @@ class NotebookIndex extends React.Component {
         if (this.props.notebooks === {}){
             return <p>No notebooks yet!</p>;
         }
-
-        const notebookLi = this.props.notebooks.map(notebook => {
+        const sortedNotebooks = this.props.notebooks.sort(function (a, b) {
+            return new Date(b.updated_at) - new Date(a.updated_at);
+        });
+        const notebookLi = sortedNotebooks.map(notebook => {
             return      <tr key={notebook.id}>
                             <td className="notebook-title">
                                 <Link to={`/app/notebooks/${notebook.id}/notes`}>
