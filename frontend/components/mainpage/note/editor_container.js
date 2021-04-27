@@ -12,7 +12,8 @@ const mstp = (state, ownProps) => {
         note: note,
         noteId,
         currentUser: state.entities.users[state.session.id],
-        notebook: note ? state.entities.notebooks[note.notebook_id] : undefined 
+        notebook: note ? state.entities.notebooks[note.notebook_id] : undefined, 
+        notebooks: state.entities.notebooks
     }
 }
 

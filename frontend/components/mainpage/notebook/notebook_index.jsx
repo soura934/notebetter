@@ -15,6 +15,9 @@ class NotebookIndex extends React.Component {
     componentDidMount(){
         this.props.fetchNotebooks();
     }
+    componentDidUpdate(){
+        this.props.fetchNotebooks();
+    }
     count(){
         if (this.props.notebooks.length > 1){
             return <h2>{this.props.notebooks.length} notebooks</h2>
@@ -23,7 +26,7 @@ class NotebookIndex extends React.Component {
         }
 
     }
-    handleDelete(id){
+    handleDelete(){
         // this.props.deleteNotebook(id)
     }
     createNotebookModal(){
@@ -68,7 +71,7 @@ class NotebookIndex extends React.Component {
                                 {format(notebook.updated_at)}
                             </td>
                             <td className="notebook-action">
-                            <i className="fas fa-trash"></i>
+                            <i className="fas fa-trash" onClick={() => this.props.deleteNotebook(notebook.id)}></i>
                             </td>
                         </tr>
         })

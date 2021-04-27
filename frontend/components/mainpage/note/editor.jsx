@@ -21,13 +21,7 @@ class Editor extends React.Component {
 
     componentDidMount(){
         this.setState(this.props.note);
-        // this.props.fetchNotebooks().then(payload => {
-        //     let notebooks = {};
-        //     debugger
-        //     payload.forEach(notebook =>  notebooks[notebook.id] = notebook)
-        //     this.setState({notebooks})
-        //     this.setState({ready: true});
-        // })
+        this.props.fetchNotebooks()
     }
     componentDidUpdate(prevProps) {
         if (this.props.match.params.noteId !== prevProps.match.params.noteId) {
