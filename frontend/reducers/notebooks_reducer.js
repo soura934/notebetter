@@ -6,7 +6,6 @@ import {
 
  const notebooksReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
-    debugger
     switch (action.type) {
         case RECEIVE_NOTEBOOK:
             return Object.assign({}, oldState, {[action.notebook.id]: action.notebook});// find out about the action
