@@ -25,7 +25,7 @@ class NoteIndex extends React.Component {
                 </div>
             </div>
             <div className="notes-list-body">
-                <NoteList notes={this.props.notes}/>
+                <NoteList notes={this.props.notes} notebookId={this.props.notebookId}/>
             </div>
         </div>
     </>

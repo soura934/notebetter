@@ -10,7 +10,11 @@ class NotebookShow extends React.Component {
             return <div>no notes yet</div>
         } 
         return ( 
-            <NoteIndex notes={this.props.notebook.notes} />
+            <NoteIndex 
+            notes={this.props.notebook.notes}
+            title={this.props.notebook.title} 
+            notebookId={this.props.notebookId}
+            />
          );
     }
 }

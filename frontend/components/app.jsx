@@ -24,7 +24,8 @@ const App = () => (
     <ProtectedRoute exact path='/app/notes' component={NoteInstruc} />
     <ProtectedRoute path='/app/notes/:noteId' component={EditorContainer} />
     <ProtectedRoute exact path='/app/notebooks' component={NotebookIndexContainer} />
-    <ProtectedRoute exact path='/app/notebooks/:notebookId/notes' component={NotebookShowContainer} />
+    <ProtectedRoute path='/app/notebooks/:notebookId/notes' component={NotebookShowContainer} />
+    <ProtectedRoute exact path='/app/notebooks/:notebookId/notes/:noteId' component={EditorContainer} />
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <AuthRoute exact path="/signup" component={SignupFormContainer} />
     <Route exact path="/" component={HomePage} />
