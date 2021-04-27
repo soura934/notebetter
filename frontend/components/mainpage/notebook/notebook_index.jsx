@@ -64,7 +64,7 @@ class NotebookIndex extends React.Component {
                                 {format(notebook.updated_at)}
                             </td>
                             <td className="notebook-action">
-                            <i className="fas fa-trash"></i>
+                            <i className="fas fa-trash" onClick={this.props.deleteNotebook(notebook.id)}></i>
                             </td>
                         </tr>
         })
