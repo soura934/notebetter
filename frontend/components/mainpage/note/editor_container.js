@@ -6,11 +6,12 @@ import Editor from './editor';
 
 
 const mstp = (state, ownProps) => {
-    // debugger
+    debugger
     return {
         note: state.entities.notes[ownProps.match.params.noteId] || {},
         noteId: ownProps.match.params.noteId,
         currentUser: state.entities.users[state.session.id],
+        //why I can't find notebook in here?
         notebooks: state.entities.notebooks
     }
 }
