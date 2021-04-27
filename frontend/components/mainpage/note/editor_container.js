@@ -1,18 +1,18 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import {deleteNote, updateNote, fetchNote, fetchNotes} from "../../../actions/note_actions"
-import {fetchNotebooks} from "../../../actions/notebook_actions"
+import {fetchNotebooks, fetchNotebook} from "../../../actions/notebook_actions"
 import Editor from './editor';
 
 
 const mstp = (state, ownProps) => {
-    debugger
+    let noteId = ownProps.match.params.noteId
+    let note = state.entities.notes[noteId]; 
     return {
-        note: state.entities.notes[ownProps.match.params.noteId] || {},
-        noteId: ownProps.match.params.noteId,
+        note: note,
+        noteId,
         currentUser: state.entities.users[state.session.id],
-        //why I can't find notebook in here?
-        notebooks: state.entities.notebooks
+        notebook: note ? state.entities.notebooks[note.notebook_id] : undefined 
     }
 }
 
@@ -22,7 +22,8 @@ const mdp = (dispatch) => {
         deleteNote: (noteId) => dispatch(deleteNote(noteId)),
         updateNote: (note) => dispatch(updateNote(note)),
         fetchNotes: () => dispatch(fetchNotes()),
-        fetchNotebooks: () => dispatch(fetchNotebooks())
+        fetchNotebooks: () => dispatch(fetchNotebooks()),
+        fetchNotebook: (notebookId)=> dispatch(fetchNotebook(notebookId))
     }
 }
 

@@ -31,6 +31,7 @@ class Editor extends React.Component {
     }
     componentDidUpdate(prevProps) {
         if (this.props.match.params.noteId !== prevProps.match.params.noteId) {
+            this.props.fetchNotebook(this.props.note.notebook_id);
             this.setState(this.props.note);
         }
       }
@@ -54,15 +55,15 @@ class Editor extends React.Component {
 
     render() { 
         
-        const note = this.props.note
+        const {note, notebook} = this.props
         // const notebook = Object.keys(this.state.notebooks).length > 0 ? this.state.notebooks[note.notebook_id] : {title:""};
         return ( <>
-        {this.props ? <div className="note"> 
+        {note && notebook ? <div className="note"> 
         
             <div className="note-header">
                 <div className="note-header-title-button">
                     <div className="note-header-title">
-                        <h1>Notebook</h1>
+                        <h1>{notebook.title}</h1>
                     </div>
                     <div className="note-action-button">
                         <button onClick={this.handleDelete}><i className="fas fa-trash"></i></button>
