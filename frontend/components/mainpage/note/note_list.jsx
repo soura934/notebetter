@@ -5,10 +5,17 @@ import { format } from 'timeago.js';
 class NoteList extends React.Component {
     constructor(props) {
         super(props);
+
+        this.sampleBody = this.sampleBody.bind(this);
     }
 
-    
-
+    sampleBody(text){
+        if(text.length > 50){
+            return text.slice(0,50) + '...'
+        } else {
+            return text;
+        }
+    }
 
     render() { 
         if (this.props.notes === {}){
@@ -27,7 +34,7 @@ class NoteList extends React.Component {
                             <h1>{note.title}</h1>
                         </div>
                         <div className="notes-list-box-header-body">
-                            <p>{note.body}</p>
+                            <p>{this.sampleBody(note.body)}</p>
                         </div>
                     </div>
                     <div className="notes-list-body-dates">
