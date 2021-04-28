@@ -20,6 +20,7 @@ class Editor extends React.Component {
     }
 
     componentDidMount(){
+        // this.props.fetchNote(this.props.noteId);
         this.setState(this.props.note);
         this.props.fetchNotebooks()
     }

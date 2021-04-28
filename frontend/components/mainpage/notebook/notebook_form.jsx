@@ -25,7 +25,7 @@ class NotebookForm extends React.Component {
     render() { 
         return ( <div className="notebook-form-parent">
             <form className="notebook-form" onSubmit={this.handleSubmit}>
-                <label for="name">
+                <label className="name">
                     <h3>Name</h3>
                     <input
                         name="name"

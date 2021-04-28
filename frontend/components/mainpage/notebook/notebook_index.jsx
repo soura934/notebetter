@@ -10,7 +10,6 @@ class NotebookIndex extends React.Component {
 
         this.count = this.count.bind(this);
         this.createNotebookModal = this.createNotebookModal.bind(this);
-        // this.handleDelete = this.handleDelete.bind(this);
     }
     componentDidMount(){
         this.props.fetchNotebooks();
@@ -26,9 +25,7 @@ class NotebookIndex extends React.Component {
         }
 
     }
-    handleDelete(){
-        // this.props.deleteNotebook(id)
-    }
+
     createNotebookModal(){
         if (this.state.openModal) {
             return (
