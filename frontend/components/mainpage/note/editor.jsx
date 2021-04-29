@@ -42,6 +42,7 @@ class Editor extends React.Component {
 
     handleDelete(){
         this.props.deleteNote(this.props.noteId)
+        .then(() => this.props.fetchNotes());
     }
     handleUpdate(e){
         e.preventDefault();

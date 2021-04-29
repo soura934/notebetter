@@ -12,6 +12,11 @@ class NoteIndex extends React.Component {
     componentDidMount() {
         this.props.fetchNotes();
     }
+    componentDidUpdate(prevProps){
+        if(prevProps.notes.length !== this.props.notes.length){
+            this.props.fetchNotes();
+        }
+    }
 
     render() { 
         return ( <>
