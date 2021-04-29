@@ -24,7 +24,6 @@ class NoteList extends React.Component {
         const sortedNotes = this.props.notes.sort(function (a, b) {
             return new Date(b.updated_at) - new Date(a.updated_at);
         });
-        console.log(this.props.notebookId)
         const noteLi = sortedNotes.map(note => {
             return <li key={note.id}>
                 <Link className="notes-list-box" to={this.props.notebookId < 0 ?

@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 class Sidebar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            title: 'Untitled',
-            body: '',
-            notebook_id: null, 
-            user_id: this.props.currentUser.id
-        };  
+        // this.state = {
+        //     title: 'Untitled',
+        //     body: '',
+        //     notebook_id: '', 
+        //     user_id: this.props.currentUser.id
+        // };  
         this.handleCreateNote = this.handleCreateNote.bind(this);
     }
     componentDidMount(){
@@ -19,15 +19,16 @@ class Sidebar extends React.Component {
 
     handleCreateNote(e) {
         e.preventDefault();
-        if (this.props.createNote(this.state)){
-            this.setState({notebook_id: this.props.notebooks[0].id})
-            this.props.createNote(this.state)
-            .then((obj) => {
+        console.log(this.state);
+        this.props.createNote({
+            title: 'Untitled',
+            body: '',
+            user_id: this.props.currentUser.id,
+            notebook_id: this.props.notebooks[0].id 
+            }).then((obj) => {
                 let noteId = obj.note.id;
-                return (this.props.history.push(`/app/notes/${noteId}`)) 
+                return (this.props.history.push(`/app/notes/${noteId}`))
             })
-
-        }
     }
 
     render() { 
