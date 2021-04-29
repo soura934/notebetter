@@ -8,7 +8,7 @@ class Sidebar extends React.Component {
         this.state = {
             title: 'Untitled',
             body: '',
-            notebook_id: 3,
+            notebook_id: 3, //default  notebook
             user_id: this.props.currentUser.id
         };  
         this.handleCreateNote = this.handleCreateNote.bind(this);
