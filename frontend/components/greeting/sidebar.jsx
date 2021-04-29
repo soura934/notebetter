@@ -5,12 +5,7 @@ import { Link } from 'react-router-dom';
 class Sidebar extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = {
-        //     title: 'Untitled',
-        //     body: '',
-        //     notebook_id: '', 
-        //     user_id: this.props.currentUser.id
-        // };  
+
         this.handleCreateNote = this.handleCreateNote.bind(this);
     }
     componentDidMount(){
@@ -19,7 +14,6 @@ class Sidebar extends React.Component {
 
     handleCreateNote(e) {
         e.preventDefault();
-        console.log(this.state);
         this.props.createNote({
             title: 'Untitled',
             body: '',
