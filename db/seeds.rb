@@ -17,19 +17,64 @@ ActiveRecord::Base.transaction do
         email: 'email@email.com',
         password: 'password'
     )
-    notebook = Notebook.create!(
-        title: 'Notebook1',
+    notebook1 = Notebook.create!(
+        title: 'Silicon Valley',
         user_id: user.id
     )
-    notes = []
-    1.upto(10) do |number|
+    notebook2 = Notebook.create!(
+        title: 'Big Bang Theory',
+        user_id: user.id
+    )
+    notebook3 = Notebook.create!(
+        title: 'Basketball',
+        user_id: user.id
+    )
+    notebook4 = Notebook.create!(
+        title: 'Quotes',
+        user_id: user.id
+    )
+
+    notes1 = []
+    1.upto(2) do |number|
         note = Note.create!(
-            title: Faker::Superhero.name,
-            body: Faker::GreekPhilosophers.quote,
+            title: Faker::TvShows::SiliconValley.character,
+            body: Faker::TvShows::SiliconValley.quote,
             user_id: user.id,
-            notebook_id: notebook.id,
+            notebook_id: notebook1.id,
         )
-        notes << note
+        notes1 << note
     end
 
+    notes2 = []
+    1.upto(5) do |number|
+        note = Note.create!(
+            title: Faker::TvShows::BigBangTheory.character,
+            body: Faker::TvShows::BigBangTheory.quote,
+            user_id: user.id,
+            notebook_id: notebook2.id,
+        )
+        notes2 << note
+    end
+
+    notes3 = []
+    1.upto(10) do |number|
+        note = Note.create!(
+            title: Faker::Sports::Basketball.player,
+            body: Faker::Sports::Basketball.team,
+            user_id: user.id,
+            notebook_id: notebook3.id,
+        )
+        notes3 << note
+    end
+
+    notes4 = []
+    1.upto(10) do |number|
+        note = Note.create!(
+            title: Faker::GreekPhilosophers.name,
+            body: Faker::GreekPhilosophers.quote,
+            user_id: user.id,
+            notebook_id: notebook4.id,
+        )
+        notes4 << note
+    end
 end
