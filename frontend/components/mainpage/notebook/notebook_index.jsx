@@ -98,12 +98,14 @@ class NotebookIndex extends React.Component {
                                 {format(notebook.updated_at)}
                             </td>
                             <td className="notebook-action">
-                                <button onClick={()=>this.setState({dropdown: !this.state.dropdown})}>
+                                <button onClick={() => this.setState({dropdown: !this.state.dropdown})}>
                                     <i className="fas fa-ellipsis-h" ></i>
                                 </button>
-                                <div className={this.state.dropdown ? 'open-action-li' : 'none-action-li'}>
-                                    {this.dropdownAction()}
+                                {/* {notebook.id ? ( */}
+                                <div className={this.state.dropdown ? 'action-li' : 'hidden'}>
+                                    {this.dropdownAction(notebook.id)}
                                 </div>
+                                {/* ) : null} */}
                             </td>
                         </tr>
         })
