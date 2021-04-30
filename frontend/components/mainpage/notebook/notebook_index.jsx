@@ -6,10 +6,14 @@ import NotebookForm from './notebook_form_container';
 class NotebookIndex extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { openModal: false};
+        this.state = { 
+            openModal: false,
+            dropdown: false
+        };
 
         this.count = this.count.bind(this);
         this.createNotebookModal = this.createNotebookModal.bind(this);
+        this.dropdownAction = this.dropdownAction.bind(this)
     }
     componentDidMount(){
         this.props.fetchNotebooks();
@@ -28,6 +32,26 @@ class NotebookIndex extends React.Component {
             return <h2>{this.props.notebooks.length} notebook</h2>
         }
 
+    }
+    dropdownAction(){
+        if (this.state.dropdown) {
+            return (
+                <div className="action-li">
+                    <li>
+                        <button onClick={()=>this.setState({dropdown: false})}>
+                            Rename Notebook
+                        </button>
+                    </li>
+                    <li>
+                        <button onClick={()=>this.setState({dropdown: false})}>
+                            Delete Notebook
+                        </button>
+                    </li>
+                </div>
+            )
+        }else {
+            return null
+        }
     }
 
     createNotebookModal(){
@@ -51,6 +75,8 @@ class NotebookIndex extends React.Component {
         }
     }
 
+
+
     render() { 
         if (this.props.notebooks === {}){
             return <p>No notebooks yet!</p>;
@@ -72,15 +98,20 @@ class NotebookIndex extends React.Component {
                                 {format(notebook.updated_at)}
                             </td>
                             <td className="notebook-action">
-                                {/* <button onClick={
-                                    () => this.props.deleteNotebook(notebook.id).
-                                    then(() => this.props.fetchNotebooks())}> */}
-                                        <i className="fas fa-ellipsis-h" ></i>
-                                {/* </button> */}
+                                <button onClick={()=>this.setState({dropdown: !this.state.dropdown})}>
+                                    <i className="fas fa-ellipsis-h" ></i>
+                                </button>
+                                <div className={this.state.dropdown ? 'open-action-li' : 'none-action-li'}>
+                                    {this.dropdownAction()}
+                                </div>
                             </td>
                         </tr>
         })
-        
+                                        // in case I need it later
+                                        /* <button onClick={
+                                    () => this.props.deleteNotebook(notebook.id).
+                                    then(() => this.props.fetchNotebooks())}> */
+                                                                    /* </button> */
         return ( <>
                 <div className="notebook_index">
                     <div className="notebook-header">
@@ -93,7 +124,9 @@ class NotebookIndex extends React.Component {
                             </div>
                             <div className="new-notebook">
                                 <button className="new-notebook-button"
-                                onClick={()=>this.setState({openModal: true})}>New Notebook</button>
+                                    onClick={()=>this.setState({openModal: true})}>
+                                    New Notebook
+                                </button>
                                 <div className={this.state.openModal ? 'open-modal' : 'none-modal'}>{this.createNotebookModal()}</div>
                             </div>
                         </div>
