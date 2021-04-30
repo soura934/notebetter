@@ -72,11 +72,11 @@ class NotebookIndex extends React.Component {
                                 {format(notebook.updated_at)}
                             </td>
                             <td className="notebook-action">
-                                <button onClick={
+                                {/* <button onClick={
                                     () => this.props.deleteNotebook(notebook.id).
-                                    then(() => this.props.fetchNotebooks())}>
-                                        <i className="fas fa-trash" ></i>
-                                </button>
+                                    then(() => this.props.fetchNotebooks())}> */}
+                                        <i className="fas fa-ellipsis-h" ></i>
+                                {/* </button> */}
                             </td>
                         </tr>
         })
