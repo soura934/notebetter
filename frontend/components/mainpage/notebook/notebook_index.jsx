@@ -13,7 +13,8 @@ class NotebookIndex extends React.Component {
 
         this.count = this.count.bind(this);
         this.createNotebookModal = this.createNotebookModal.bind(this);
-        this.dropdownAction = this.dropdownAction.bind(this)
+        this.dropdownAction = this.dropdownAction.bind(this);
+        this.dropdownDiv = this.dropdownDiv.bind(this)
     }
     componentDidMount(){
         this.props.fetchNotebooks();
@@ -33,7 +34,7 @@ class NotebookIndex extends React.Component {
         }
 
     }
-    dropdownAction(){
+    dropdownDiv(){
         if (this.state.dropdown) {
             return (
                 <div className="action-li">
@@ -51,6 +52,13 @@ class NotebookIndex extends React.Component {
             )
         }else {
             return null
+        }
+    }
+    dropdownAction(){
+        if (this.state.dropdown) {
+            this.setState({dropdown: false})
+        } else {
+            this.setState({dropdown: true})            
         }
     }
 
@@ -98,12 +106,12 @@ class NotebookIndex extends React.Component {
                                 {format(notebook.updated_at)}
                             </td>
                             <td className="notebook-action">
-                                <button onClick={() => this.setState({dropdown: !this.state.dropdown})}>
+                                <button onClick={this.dropdownAction}>
                                     <i className="fas fa-ellipsis-h" ></i>
                                 </button>
                                 {/* {notebook.id ? ( */}
                                 <div className={this.state.dropdown ? 'action-li' : 'hidden'}>
-                                    {this.dropdownAction(notebook.id)}
+                                    {this.dropdownDiv()}
                                 </div>
                                 {/* ) : null} */}
                             </td>
