@@ -13,20 +13,13 @@ class NotebookIndex extends React.Component {
 
         this.count = this.count.bind(this);
         this.createNotebookModal = this.createNotebookModal.bind(this);
-        // this.dropdownAction = this.dropdownAction.bind(this);
         this.dropdownDiv = this.dropdownDiv.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
     }
     componentDidMount(){
         this.props.fetchNotebooks();
     }
-    // componentDidUpdate(prevProps){
-    //     console.log(this.props.notebooks)
-    //     console.log(prevProps)
-    //     if(prevProps.notebooks.length !== this.props.notebooks.length) {
-    //         this.props.fetchNotebooks();
-    //     }
-    // }
+
     count(){
         if (this.props.notebooks.length > 1){
             return <h2>{this.props.notebooks.length} notebooks</h2>
