@@ -148,14 +148,15 @@
     display: none;
 }
 .action-li {
-    // display: flex;
-    // align-items: flex-start;
+    text-align: left;
     list-style: none;
     position: absolute;
     z-index: 1;
     background-color: white;
-    box-shadow: 2px 2px 2px gray;
+    box-shadow: -2px -2px 2px gray, 2px 2px 2px gray, -2px 2px 2px gray, 2px -2px 2px gray;
     width: 150px;
     border: 1px gray solid;
-    // padding: 15px 0;
+    li {
+        padding: 5px;
+    }
 }

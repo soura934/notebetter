@@ -58,6 +58,7 @@ class NotebookIndex extends React.Component {
         this.state.dropdown[notebookId] === true ?
             this.setState({dropdown: Object.assign({}, this.state.dropdown, {[notebookId]: false })}) :
             this.setState({dropdown: Object.assign({}, this.state.dropdown, {[notebookId]: true })})
+            console.log(this.state)
     }
 
     createNotebookModal(){
@@ -108,11 +109,9 @@ class NotebookIndex extends React.Component {
                                 <button onClick={() => this.dropdownAction(notebook.id)}>
                                     <i className="fas fa-ellipsis-h" ></i>
                                 </button>
-                                {/* {notebook.id ? ( */}
                                 <div className={notebookActionsDropdown ? 'action-li' : 'hidden'}>
                                     {this.dropdownDiv()}
                                 </div>
-                                {/* ) : null} */}
                             </td>
                         </tr>
             )

@@ -6,7 +6,6 @@ import { fetchNotebooks} from "../../actions/notebook_actions";
 import Sidebar from './sidebar';
 
 const mst = (state, ownProps) => {
-    debugger
     return {
         currentUser: state.entities.users[state.session.id],
         notebooks: Object.keys(state.entities.notebooks).map(id => state.entities.notebooks[id])
