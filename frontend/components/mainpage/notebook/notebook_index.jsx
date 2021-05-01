@@ -34,7 +34,7 @@ class NotebookIndex extends React.Component {
         }
 
     }
-    dropdownDiv(){
+    dropdownDiv(notebookId){
         if (this.state.dropdown) {
             return (
                 <div className="action-li">
@@ -44,9 +44,10 @@ class NotebookIndex extends React.Component {
                         {/* </button> */}
                     </li>
                     <li>
-                        {/* <button onClick={()=>this.setState({dropdown: false})}> */}
-                            Delete Notebook
-                        {/* </button> */}
+                        <button onClick={() => this.props.deleteNotebook(notebookId).
+                            then(() => this.props.fetchNotebooks())}>
+                                Delete Notebook
+                        </button>
                     </li>
                 </div>
             )
@@ -110,18 +111,12 @@ class NotebookIndex extends React.Component {
                                     <i className="fas fa-ellipsis-h" ></i>
                                 </button>
                                 <div className={notebookActionsDropdown ? 'action-li' : 'hidden'}>
-                                    {this.dropdownDiv()}
+                                    {this.dropdownDiv(notebook.id)}
                                 </div>
                             </td>
                         </tr>
             )
         })
-                                        // in case I need it later
-                                        /* <button onClick={
-                                    () => this.props.deleteNotebook(notebook.id).
-                                    then(() => this.props.fetchNotebooks())}> */
-                                                                    /* </button> */
-                                                                    //if it's -1 and greater than 0 
         return ( <>
                 <div className="notebook_index">
                     <div className="notebook-header">
