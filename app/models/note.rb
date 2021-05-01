@@ -6,6 +6,8 @@ class Note < ApplicationRecord
         primary_key: :id,
         foreign_key: :user_id
 
-    belongs_to :notebook
-
+    belongs_to :notebook,
+        class_name: :Notebook,
+        primary_key: :id,
+        foreign_key: :notebook_id
 end
