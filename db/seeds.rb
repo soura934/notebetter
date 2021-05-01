@@ -17,6 +17,10 @@ ActiveRecord::Base.transaction do
         email: 'email@email.com',
         password: 'password'
     )
+    notebook4 = Notebook.create!(
+        title: 'Quotes',
+        user_id: user.id
+    )
     notebook1 = Notebook.create!(
         title: 'Silicon Valley',
         user_id: user.id
@@ -27,10 +31,6 @@ ActiveRecord::Base.transaction do
     )
     notebook3 = Notebook.create!(
         title: 'Basketball',
-        user_id: user.id
-    )
-    notebook4 = Notebook.create!(
-        title: 'Quotes',
         user_id: user.id
     )
 

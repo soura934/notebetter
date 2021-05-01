@@ -14,7 +14,8 @@ class NotebookIndex extends React.Component {
         this.count = this.count.bind(this);
         this.createNotebookModal = this.createNotebookModal.bind(this);
         // this.dropdownAction = this.dropdownAction.bind(this);
-        this.dropdownDiv = this.dropdownDiv.bind(this)
+        this.dropdownDiv = this.dropdownDiv.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
     componentDidMount(){
         this.props.fetchNotebooks();
@@ -34,7 +35,15 @@ class NotebookIndex extends React.Component {
         }
 
     }
-    dropdownDiv(notebookId){
+    handleDelete(notebookId, title){
+        if (title !== 'Quotes'){
+            this.props.deleteNotebook(notebookId).
+                then(() => this.props.fetchNotebooks())
+        } else {
+            alert("Quotes can't be deleted...try another");
+        }
+    }
+    dropdownDiv(notebookId, title){
         if (this.state.dropdown) {
             return (
                 <div className="action-li">
@@ -44,8 +53,7 @@ class NotebookIndex extends React.Component {
                         {/* </button> */}
                     </li>
                     <li>
-                        <button onClick={() => this.props.deleteNotebook(notebookId).
-                            then(() => this.props.fetchNotebooks())}>
+                        <button onClick={() => this.handleDelete(notebookId, title)}>
                                 Delete Notebook
                         </button>
                     </li>
@@ -111,7 +119,7 @@ class NotebookIndex extends React.Component {
                                     <i className="fas fa-ellipsis-h" ></i>
                                 </button>
                                 <div className={notebookActionsDropdown ? 'action-li' : 'hidden'}>
-                                    {this.dropdownDiv(notebook.id)}
+                                    {this.dropdownDiv(notebook.id, notebook.title)}
                                 </div>
                             </td>
                         </tr>
