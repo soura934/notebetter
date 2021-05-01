@@ -8,12 +8,12 @@ class NotebookIndex extends React.Component {
         super(props);
         this.state = { 
             openModal: false,
-            dropdown: false
+            dropdown: {},
         };
 
         this.count = this.count.bind(this);
         this.createNotebookModal = this.createNotebookModal.bind(this);
-        this.dropdownAction = this.dropdownAction.bind(this);
+        // this.dropdownAction = this.dropdownAction.bind(this);
         this.dropdownDiv = this.dropdownDiv.bind(this)
     }
     componentDidMount(){
@@ -39,14 +39,14 @@ class NotebookIndex extends React.Component {
             return (
                 <div className="action-li">
                     <li>
-                        <button onClick={()=>this.setState({dropdown: false})}>
+                        {/* <button onClick={()=>this.setState({dropdown: false})}> */}
                             Rename Notebook
-                        </button>
+                        {/* </button> */}
                     </li>
                     <li>
-                        <button onClick={()=>this.setState({dropdown: false})}>
+                        {/* <button onClick={()=>this.setState({dropdown: false})}> */}
                             Delete Notebook
-                        </button>
+                        {/* </button> */}
                     </li>
                 </div>
             )
@@ -54,12 +54,10 @@ class NotebookIndex extends React.Component {
             return null
         }
     }
-    dropdownAction(){
-        if (this.state.dropdown) {
-            this.setState({dropdown: false})
-        } else {
-            this.setState({dropdown: true})            
-        }
+    dropdownAction(notebookId){
+        this.state.dropdown[notebookId] === true ?
+            this.setState({dropdown: Object.assign({}, this.state.dropdown, {[notebookId]: false })}) :
+            this.setState({dropdown: Object.assign({}, this.state.dropdown, {[notebookId]: true })})
     }
 
     createNotebookModal(){
@@ -93,7 +91,8 @@ class NotebookIndex extends React.Component {
             return new Date(b.updated_at) - new Date(a.updated_at);
         });
         const notebookLi = sortedNotebooks.map(notebook => {
-            return      <tr key={notebook.id}>
+            const notebookActionsDropdown = this.state.dropdown[notebook.id];
+            return (     <tr key={notebook.id}>
                             <td className="notebook-title">
                                 <Link to={`/app/notebooks/${notebook.id}/notes`}>
                                 {notebook.title}
@@ -106,22 +105,24 @@ class NotebookIndex extends React.Component {
                                 {format(notebook.updated_at)}
                             </td>
                             <td className="notebook-action">
-                                <button onClick={this.dropdownAction}>
+                                <button onClick={() => this.dropdownAction(notebook.id)}>
                                     <i className="fas fa-ellipsis-h" ></i>
                                 </button>
                                 {/* {notebook.id ? ( */}
-                                <div className={this.state.dropdown ? 'action-li' : 'hidden'}>
+                                <div className={notebookActionsDropdown ? 'action-li' : 'hidden'}>
                                     {this.dropdownDiv()}
                                 </div>
                                 {/* ) : null} */}
                             </td>
                         </tr>
+            )
         })
                                         // in case I need it later
                                         /* <button onClick={
                                     () => this.props.deleteNotebook(notebook.id).
                                     then(() => this.props.fetchNotebooks())}> */
                                                                     /* </button> */
+                                                                    //if it's -1 and greater than 0 
         return ( <>
                 <div className="notebook_index">
                     <div className="notebook-header">
