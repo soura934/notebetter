@@ -36,6 +36,9 @@ class NotebookIndex extends React.Component {
             alert("Quotes can't be deleted...try another");
         }
     }
+   updateNotebook(notebook){ // pass in {id: notebook.id, title: notebook.title}
+       this.updateNotebook(notebook).then(() => this.props.fetchNotebooks())
+   }
    
     dropdownDiv(notebookId, title){
         if (this.state.dropdown) {
