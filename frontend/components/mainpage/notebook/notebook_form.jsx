@@ -37,7 +37,7 @@ class NotebookForm extends React.Component {
                     />
                 </label>
                 <div className="notebook-form-button-parent">
-                    <button className="notebook-form-button">Save</button>
+                    <button type="submit" className="notebook-form-button" >Save</button>
                 </div>
             </form>
         </div> );

@@ -36,6 +36,7 @@ class NotebookIndex extends React.Component {
             alert("Quotes can't be deleted...try another");
         }
     }
+   
     dropdownDiv(notebookId, title){
         if (this.state.dropdown) {
             return (
@@ -60,6 +61,7 @@ class NotebookIndex extends React.Component {
         this.state.dropdown[notebookId] === true ?
             this.setState({dropdown: Object.assign({}, this.state.dropdown, {[notebookId]: false })}) :
             this.setState({dropdown: Object.assign({}, {[notebookId]: true })})
+            console.log(this.state)
     }
 
     createNotebookModal(){
