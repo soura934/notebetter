@@ -59,8 +59,7 @@ class NotebookIndex extends React.Component {
     dropdownAction(notebookId){
         this.state.dropdown[notebookId] === true ?
             this.setState({dropdown: Object.assign({}, this.state.dropdown, {[notebookId]: false })}) :
-            this.setState({dropdown: Object.assign({}, this.state.dropdown, {[notebookId]: true })})
-            console.log(this.state)
+            this.setState({dropdown: Object.assign({}, {[notebookId]: true })})
     }
 
     createNotebookModal(){
