@@ -8,6 +8,7 @@ class NotebookIndex extends React.Component {
         super(props);
         this.state = { 
             openModal: false,
+            openUpdateModal: false,
             dropdown: {},
         };
 
@@ -15,6 +16,7 @@ class NotebookIndex extends React.Component {
         this.createNotebookModal = this.createNotebookModal.bind(this);
         this.dropdownDiv = this.dropdownDiv.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
+        this.updateForm = this.updateForm.bind(this)
     }
     componentDidMount(){
         this.props.fetchNotebooks();
@@ -39,15 +41,55 @@ class NotebookIndex extends React.Component {
    updateNotebook(notebook){ // pass in {id: notebook.id, title: notebook.title}
        this.updateNotebook(notebook).then(() => this.props.fetchNotebooks())
    }
+    updateForm(){
+        if (this.state.openUpdateModal) {
+            return (
+                <div className="modal">
+                    <div className="modal-child">
+                        <div className="modal-info">
+                            <h2>Rename Notebook</h2>
+                            <button onClick={() => this.setState({openUpdateModal: false})}>
+                                <i className="fa fa-window-close"></i>
+                            </button>
+                        </div>
+                        <p>Notebooks are useful for grouping notes around a common topic. They can be private or shared.</p>
+                        <div>
+                        <div className="notebook-form-parent">
+                            <form className="notebook-form">
+                                <label className="name">
+                                    <h3>Name</h3>
+                                    <input
+                                        name="name"
+                                        type="text"
+                                        id="notebook-title"
+                                        // onChange={this.handleChange('title')}
+                                        placeholder='Notebook name'
+                                        // value={this.state.title}
+                                    />
+                                </label>
+                                <div className="notebook-form-button-parent">
+                                    <button type="submit" className="notebook-form-button" >Save</button>
+                                </div>
+                            </form>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            )
+        } else {
+            return null
+        }
+    }
    
     dropdownDiv(notebookId, title){
         if (this.state.dropdown) {
             return (
                 <div className="action-li">
                     <li>
-                        {/* <button onClick={()=>this.setState({dropdown: false})}> */}
+                        <button onClick={()=>this.setState({openUpdateModal: true})}>
                             Rename Notebook
-                        {/* </button> */}
+                        </button>
+                        <div className={this.state.openUpdateModal ? 'open-modal' : 'none-modal'}>{this.updateForm()}</div>
                     </li>
                     <li>
                         <button onClick={() => this.handleDelete(notebookId, title)}>
