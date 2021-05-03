@@ -7,6 +7,8 @@ class NotebookIndex extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
+            id: null,
+            title: "",
             openModal: false,
             openUpdateModal: false,
             dropdown: {},
@@ -16,7 +18,9 @@ class NotebookIndex extends React.Component {
         this.createNotebookModal = this.createNotebookModal.bind(this);
         this.dropdownDiv = this.dropdownDiv.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
-        this.updateForm = this.updateForm.bind(this)
+        this.updateForm = this.updateForm.bind(this);
+        this.handleTitle = this.handleTitle.bind(this);
+        this.updateNotebook = this.updateNotebook.bind(this);
     }
     componentDidMount(){
         this.props.fetchNotebooks();
@@ -38,8 +42,15 @@ class NotebookIndex extends React.Component {
             alert("Quotes can't be deleted...try another");
         }
     }
-   updateNotebook(notebook){ // pass in {id: notebook.id, title: notebook.title}
-       this.updateNotebook(notebook).then(() => this.props.fetchNotebooks())
+    handleTitle(field){
+        return (e) => {
+            this.setState({[field]: e.target.value});
+        };
+    }
+    updateNotebook(e){
+        e.preventDefault();
+        const {id, title} = this.state;
+        this.props.updateNotebook({id, title})//.then(() => this.props.fetchNotebooks())
    }
     updateForm(){
         if (this.state.openUpdateModal) {
@@ -55,16 +66,16 @@ class NotebookIndex extends React.Component {
                         <p>Notebooks are useful for grouping notes around a common topic. They can be private or shared.</p>
                         <div>
                         <div className="notebook-form-parent">
-                            <form className="notebook-form">
+                            <form className="notebook-form" onSubmit={this.updateNotebook}>
                                 <label className="name">
                                     <h3>Name</h3>
                                     <input
                                         name="name"
                                         type="text"
                                         id="notebook-title"
-                                        // onChange={this.handleChange('title')}
+                                        onChange={this.handleTitle('title')}
                                         placeholder='Notebook name'
-                                        // value={this.state.title}
+                                        value={this.state.title}
                                     />
                                 </label>
                                 <div className="notebook-form-button-parent">
@@ -89,7 +100,7 @@ class NotebookIndex extends React.Component {
                         <button onClick={()=>this.setState({openUpdateModal: true})}>
                             Rename Notebook
                         </button>
-                        <div className={this.state.openUpdateModal ? 'open-modal' : 'none-modal'}>{this.updateForm()}</div>
+                        <div className={this.state.openUpdateModal ? 'open-modal' : 'none-modal'}>{this.updateForm(notebookId)}</div>
                     </li>
                     <li>
                         <button onClick={() => this.handleDelete(notebookId, title)}>
@@ -103,10 +114,10 @@ class NotebookIndex extends React.Component {
         }
     }
     dropdownAction(notebookId){
+        this.setState({id: notebookId})
         this.state.dropdown[notebookId] === true ?
             this.setState({dropdown: Object.assign({}, this.state.dropdown, {[notebookId]: false })}) :
             this.setState({dropdown: Object.assign({}, {[notebookId]: true })})
-            console.log(this.state)
     }
 
     createNotebookModal(){
