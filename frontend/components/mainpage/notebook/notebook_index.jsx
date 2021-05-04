@@ -51,7 +51,8 @@ class NotebookIndex extends React.Component {
         e.preventDefault();
         const {id, title} = this.state;
         this.props.updateNotebook({id, title}).then(() => this.props.fetchNotebooks());
-        this.setState({openUpdateModal: false})
+        this.setState({openUpdateModal: false});
+        this.dropdownAction(this.state.id);
 
    }
     updateForm(){
@@ -65,7 +66,7 @@ class NotebookIndex extends React.Component {
                                 <i className="fa fa-window-close"></i>
                             </button>
                         </div>
-                        <p>Notebooks are useful for grouping notes around a common topic. They can be private or shared.</p>
+                        <p></p>
                         <div>
                         <div className="notebook-form-parent">
                             <form className="notebook-form" onSubmit={this.updateNotebook}>
@@ -76,7 +77,7 @@ class NotebookIndex extends React.Component {
                                         type="text"
                                         id="notebook-title"
                                         onChange={this.handleTitle('title')}
-                                        placeholder='Notebook name'
+                                        placeholder='notebook name'
                                         value={this.state.title}
                                     />
                                 </label>
@@ -92,6 +93,12 @@ class NotebookIndex extends React.Component {
         } else {
             return null
         }
+    }
+    dropdownAction(notebookId){
+        this.setState({id: notebookId})
+        this.state.dropdown[notebookId] === true ?
+            this.setState({dropdown: Object.assign({}, this.state.dropdown, {[notebookId]: false })}) :
+            this.setState({dropdown: Object.assign({}, {[notebookId]: true })})
     }
    
     dropdownDiv(notebookId, title){
@@ -116,12 +123,6 @@ class NotebookIndex extends React.Component {
         }else {
             return null
         }
-    }
-    dropdownAction(notebookId){
-        this.setState({id: notebookId})
-        this.state.dropdown[notebookId] === true ?
-            this.setState({dropdown: Object.assign({}, this.state.dropdown, {[notebookId]: false })}) :
-            this.setState({dropdown: Object.assign({}, {[notebookId]: true })})
     }
 
     createNotebookModal(){
