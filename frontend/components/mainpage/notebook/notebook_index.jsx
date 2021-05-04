@@ -50,7 +50,9 @@ class NotebookIndex extends React.Component {
     updateNotebook(e){
         e.preventDefault();
         const {id, title} = this.state;
-        this.props.updateNotebook({id, title})//.then(() => this.props.fetchNotebooks())
+        this.props.updateNotebook({id, title}).then(() => this.props.fetchNotebooks());
+        this.setState({openUpdateModal: false})
+
    }
     updateForm(){
         if (this.state.openUpdateModal) {
@@ -97,7 +99,9 @@ class NotebookIndex extends React.Component {
             return (
                 <div className="action-li">
                     <li>
-                        <button onClick={()=>this.setState({openUpdateModal: true})}>
+                        <button onClick={()=> {
+                            this.setState({openUpdateModal: true});
+                        }}>
                             Rename Notebook
                         </button>
                         <div className={this.state.openUpdateModal ? 'open-modal' : 'none-modal'}>{this.updateForm(notebookId)}</div>
