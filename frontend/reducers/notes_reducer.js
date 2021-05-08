@@ -3,6 +3,7 @@ import {
     RECEIVE_NOTES,
     DESTROY_NOTE
 } from '../actions/note_actions';
+import {DESTROY_NOTEBOOK} from "../actions/notebook_actions";
 
 const notesReducer = (oldState = {}, action) => {
     // debugger
@@ -17,6 +18,13 @@ const notesReducer = (oldState = {}, action) => {
             let newState = Object.assign({}, oldState)
             delete newState[action.noteId];
             return newState;
+        case DESTROY_NOTEBOOK:
+            debugger
+            let newStatenote = Object.assign({}, oldState)
+            action.notebookId.notes.forEach(note => {
+                delete newStatenote[note.id]
+            })
+            return newStatenote;
         default:
             return oldState;
     }
