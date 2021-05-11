@@ -48,20 +48,28 @@ class NotebookIndex extends React.Component {
         if (this.state.openDeleteModal) {
             return (
                 <div className="modal">
-                    <div className="modal-child">
-                        <div className="modal-info">
+                    <div className="delete-modal-child">
+                        <div className="delete-modal-info">
                             <h2>Delete notebook?</h2>
-                            <button onClick={() => this.setState({openDeleteModal: false})}>
-                                <i className="fa fa-window-close"></i>
+                            <button 
+                                className="close-window"
+                                onClick={() => this.setState({openDeleteModal: false})}>
+                                <i className="fa fa-times"></i>
                             </button>
                         </div>
                         <p>Any notes in the notebook will be deleted. This cannot be undone.</p>
-                        <div>
-                            <button onClick={() => this.handleDelete(notebookId, title)}>
-                                Delete
-                            </button>
-                            <button onClick={() => this.setState({openDeleteModal: false})}>
+                        <div className="delete-actions">
+                            <button
+                                className="delete-cancel" 
+                                onClick={() => this.setState({openDeleteModal: false})}
+                                >
                                 Cancel
+                            </button>
+                            <button 
+                                className="delete-delete"
+                                onClick={() => this.handleDelete(notebookId, title)}
+                                >
+                                Delete
                             </button>
                         </div>
                     </div>
@@ -82,7 +90,7 @@ class NotebookIndex extends React.Component {
         this.dropdownAction(this.state.id);
 
    }
-    updateForm(notebookId){
+    updateForm(){
         // this.dropdownAction(notebookId)
         if (this.state.openUpdateModal) {
             return (
