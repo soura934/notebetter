@@ -39,7 +39,8 @@ class NotebookIndex extends React.Component {
     handleDelete(notebookId, title){
         if (title !== 'Quotes'){
             this.props.deleteNotebook(notebookId).
-                then(() => this.props.fetchNotebooks())
+                then(() => this.props.fetchNotebooks());
+                this.setState({openDeleteModal: false});
         } else {
             alert("Quotes can't be deleted...try another");
         }
