@@ -11,6 +11,7 @@ class NotebookIndex extends React.Component {
             title: "",
             openModal: false,
             openUpdateModal: false,
+            openDeleteModal: false,
             dropdown: {},
         };
 
@@ -21,6 +22,7 @@ class NotebookIndex extends React.Component {
         this.updateForm = this.updateForm.bind(this);
         this.handleTitle = this.handleTitle.bind(this);
         this.updateNotebook = this.updateNotebook.bind(this);
+        this.deleteModal = this.deleteModal.bind(this)
     }
     componentDidMount(){
         this.props.fetchNotebooks();
@@ -42,6 +44,31 @@ class NotebookIndex extends React.Component {
             alert("Quotes can't be deleted...try another");
         }
     }
+    deleteModal(notebookId, title){
+        if (this.state.openDeleteModal) {
+            return (
+                <div className="modal">
+                    <div className="modal-child">
+                        <div className="modal-info">
+                            <h2>Delete notebook?</h2>
+                            <button onClick={() => this.setState({openDeleteModal: false})}>
+                                <i className="fa fa-window-close"></i>
+                            </button>
+                        </div>
+                        <p>Any notes in the notebook will be deleted. This cannot be undone.</p>
+                        <div>
+                            <button onClick={() => this.handleDelete(notebookId, title)}>
+                                Delete
+                            </button>
+                            <button onClick={() => this.setState({openDeleteModal: false})}>
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+    }
     handleTitle(field){
         return (e) => {
             this.setState({[field]: e.target.value});
@@ -55,7 +82,8 @@ class NotebookIndex extends React.Component {
         this.dropdownAction(this.state.id);
 
    }
-    updateForm(){
+    updateForm(notebookId){
+        // this.dropdownAction(notebookId)
         if (this.state.openUpdateModal) {
             return (
                 <div className="modal">
@@ -95,7 +123,7 @@ class NotebookIndex extends React.Component {
         }
     }
     dropdownAction(notebookId){
-        this.setState({id: notebookId})
+        // this.setState({id: notebookId})
         this.state.dropdown[notebookId] === true ?
             this.setState({dropdown: Object.assign({}, this.state.dropdown, {[notebookId]: false })}) :
             this.setState({dropdown: Object.assign({}, {[notebookId]: true })})
@@ -114,9 +142,10 @@ class NotebookIndex extends React.Component {
                         <div className={this.state.openUpdateModal ? 'open-modal' : 'none-modal'}>{this.updateForm(notebookId)}</div>
                     </li>
                     <li>
-                        <button onClick={() => this.handleDelete(notebookId, title)}>
+                        <button onClick={() => this.setState({openDeleteModal: true})}>
                                 Delete Notebook
                         </button>
+                        <div className={this.state.openDeleteModal ? 'open-modal' : 'none-modal'}>{this.deleteModal(notebookId, title)}</div>
                     </li>
                 </div>
             )
