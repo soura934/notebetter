@@ -1,6 +1,6 @@
 import React from "react";
 import { format } from 'timeago.js';
-
+import ReactQuill from 'react-quill';
 
 class Editor extends React.Component {
     constructor(props) {
@@ -79,11 +79,11 @@ class Editor extends React.Component {
                     </input>
                 </div>
                 <div className="note-body-body">
-                    <textarea placeholder="Start writing"
+                    <ReactQuill placeholder="Start writing"
                     value={this.state.body}
                     onBlur={this.handleUpdate}
-                    onChange={this.handleBody}>
-                    </textarea>
+                    onChange={this.handleBody} />
+                    {/* </textarea> */}
                 </div>
             </div>
         </div> : null}
