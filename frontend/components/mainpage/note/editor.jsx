@@ -81,7 +81,7 @@ class Editor extends React.Component {
                 <div className="note-body-body">
                     <ReactQuill placeholder="Start writing"
                     id="test"
-                    value={this.state.body}
+                    value={this.state.body || {}}
                     onBlur={this.handleUpdate}
                     onChange={this.handleBody}
                     theme="snow" />
