@@ -7,13 +7,20 @@ class NoteList extends React.Component {
         super(props);
 
         this.sampleBody = this.sampleBody.bind(this);
+        this.removeHTML = this.removeHTML.bind(this);
+    }
+    removeHTML(text) {
+        let tmp = document.createElement("DIV");
+        tmp.innerHTML = text;
+        return tmp.textContent || tmp.innerText || "";
     }
 
     sampleBody(text){
         if(text.length > 50){
-            return text.slice(0,50) + '...'
+            let sample = text.slice(0,50) + '...'
+            return this.removeHTML(sample)
         } else {
-            return text;
+            return this.removeHTML(text);
         }
     }
 
