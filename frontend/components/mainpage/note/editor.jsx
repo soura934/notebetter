@@ -37,7 +37,7 @@ class Editor extends React.Component {
         this.setState({title: e.target.value})
     }
     handleBody(e){
-        this.setState({body: e.target.value})
+        this.setState({body: e})
     }
 
     handleDelete(){
@@ -85,7 +85,6 @@ class Editor extends React.Component {
                     onBlur={this.handleUpdate}
                     onChange={this.handleBody}
                     theme="snow" />
-                    {/* </textarea> */}
                 </div>
             </div>
         </div> : null}
