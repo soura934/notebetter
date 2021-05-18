@@ -33,7 +33,7 @@ class NoteList extends React.Component {
                             <h1>{note.title}</h1>
                         </div>
                         <div className="notes-list-box-header-body">
-                            <p>{this.sampleBody(note.body)}</p>
+                            {this.sampleBody(note.body)}
                         </div>
                     </div>
                     <div className="notes-list-body-dates">

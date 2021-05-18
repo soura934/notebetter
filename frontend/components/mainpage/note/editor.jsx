@@ -45,7 +45,6 @@ class Editor extends React.Component {
         .then(() => this.props.fetchNotes());
     }
     handleUpdate(e){
-        e.preventDefault();
         const {body, title, id} = this.state;
         this.props.updateNote({body, title, id});
     }
@@ -80,8 +79,8 @@ class Editor extends React.Component {
                 </div>
                 <div className="note-body-body">
                     <ReactQuill placeholder="Start writing"
-                    id="test"
-                    value={this.state.body || {}}
+                    id="quill"
+                    value={this.state.body}
                     onBlur={this.handleUpdate}
                     onChange={this.handleBody}
                     theme="snow" />

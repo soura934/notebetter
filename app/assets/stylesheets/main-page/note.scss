@@ -50,12 +50,14 @@
 }
 .note-body-body {
     padding: 10px;
-    textarea {
-        font-size: 15px;
-        width: 100%;
-        height: 400px;
-    }
 }
+
+#quill {
+    font-size: 15px;
+    width: 100%;
+    height: 400px;
+}
+
 .instruction {
     display: flex;
     align-items: center;
@@ -66,4 +68,7 @@
     color: white;
     font-weight:700;
 
+}
+.ql-container, .ql-toolbar{
+    border: none !important;
 }
