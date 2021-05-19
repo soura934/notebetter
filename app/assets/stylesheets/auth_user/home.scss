@@ -1,6 +1,6 @@
 .nav{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     min-height: 10vh;
     background-color: white;
@@ -36,6 +36,7 @@
     align-items: center;
     margin-left: 50px;
     justify-content: space-between;
+    padding: 15px;
 }
 
 .logsbutton {
@@ -47,7 +48,7 @@
 .sites {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    padding-left: 20px;
 }
 
 .body{
