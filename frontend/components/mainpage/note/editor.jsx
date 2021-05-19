@@ -50,7 +50,25 @@ class Editor extends React.Component {
     }
 
     render() { 
-        
+        const modules = {
+            toolbar: [
+                [{ 'font': [] }],
+                [{ 'size': ['small', false, 'large', 'huge'] }],
+                ['bold', 'italic', 'underline','strike', 'blockquote', 'code-block'],
+                [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+                [{ 'color': [] }, { 'background': [] }],
+                ['link', 'image', 'video'],
+                ['clean']
+            ],
+            };
+        const formats = [
+            'font',
+            'size',
+            'bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block',
+            'list', 'bullet', 'indent',
+            'color', 'background',
+            'link', 'image', 'video'
+        ];
         const {note, notebook} = this.props
         // const notebook = Object.keys(this.state.notebooks).length > 0 ? this.state.notebooks[note.notebook_id] : {title:""};
         return ( <>
@@ -84,7 +102,9 @@ class Editor extends React.Component {
                     value={this.state.body}
                     onBlur={this.handleUpdate}
                     onChange={this.handleBody}
-                    theme="snow" />
+                    formats={formats}
+                    modules={modules}
+                    />
                 </div>
             </div>
         </div> : null}
