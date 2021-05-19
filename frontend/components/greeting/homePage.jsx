@@ -4,22 +4,33 @@ import { Link } from 'react-router-dom';
 
 const HomePage = () => {
     return (
-    <div>
-        <nav className="nav">
-        <div className="logo">
-        <div className="logo-img">
-        <img src="https://www.datocms-assets.com/15991/1580862562-test.gif?auto=format"/>
-        </div>
-        <h1>Notebetter</h1>
-
-            </div>
-            <div className="logsbutton">
-            <Link to="/login">Login</Link>
-            <>or</>
-            <br />
-            <Link to="/signup">Signup</Link>
-            </div>
-        </nav>
+        <div>
+            <nav className="nav">
+                <div className="logo-and-sites">
+                    <div className="logo">
+                        <div className="logo-img">
+                            <img src="https://www.datocms-assets.com/15991/1580862562-test.gif?auto=format"/>
+                        </div>
+                        <h1>NoteBetter</h1>
+                    </div>
+                    <div className="sites">
+                        <ul>
+                            <h2>Github</h2>
+                        </ul>
+                        <ul>
+                            <h2>LinkedIn</h2>
+                        </ul>
+                        <ul>
+                            <h2>AngelList</h2>
+                        </ul>
+                    </div>
+                </div>
+                <div className="logsbutton">
+                    <Link to="/login">Login</Link> 
+                    or
+                    <Link to="/signup">Signup</Link>
+                </div>
+            </nav>
         <div className="body">
         <div className="main-img">
         <img src="https://evernote.com/c/assets/homepage/hp_hero_note@2x__en.png?eb8f5a8987a4b6fb"/>
@@ -67,7 +78,7 @@ const HomePage = () => {
             </ul>
             </li>
         </footer>
-    </div>
+        </div>
         )
 }
 
