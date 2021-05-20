@@ -15,13 +15,19 @@ const HomePage = () => {
                     </div>
                     <div className="sites">
                         <ul>
-                            <li>Github</li>
+                            <li>
+                                <a href="https://github.com/soura934" target="_blank">GitHub</a>
+                            </li>
                         </ul>
                         <ul>
-                            <li>LinkedIn</li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/mansour-dione" target="_blank">LinkedIn</a>
+                            </li>
                         </ul>
                         <ul>
-                            <li>AngelList</li>
+                            <li>
+                                <a href="https://angel.co/u/mansour-dione" target="_blank">AngelList</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

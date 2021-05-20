@@ -31,7 +31,7 @@
 }
 
 .logo {
-    font-size: 25px;
+    font-size: 30px;
     display: flex;
     align-items: center;
     margin-left: 50px;
@@ -49,6 +49,14 @@
     display: flex;
     align-items: center;
     padding-left: 20px;
+    ul {
+        display: flex;
+        li {
+            padding-left: 40px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+    }
 }
 
 .body{
